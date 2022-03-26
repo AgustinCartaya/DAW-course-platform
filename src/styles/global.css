@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+/*Global colors*/
+:root {
+  --main-color: #111; /**inputs background**/
+  --secondary-color: #fff;
+
+  --color1-1: #222; /**webpage background**/
+  --color1-2: #35858b;
+  --color1-3: #333;
+  --color1-4: #aaa;
+  --color1-5: #4fbdba;
+
+  --color2-1: #aaa; /**webpage background**/
+  --color2-2: #54bab9;
+  --color2-3: #f7ecde;
+  --color2-4: #fbf8f1;
+  --color2-5: #e9dac1;
+}
+
+body {
+    position: relative;
+    font-family: "Quicksand", sans-serif;
+    background: linear-gradient(
+      to right,
+      var(--color1-1),
+      var(--color1-3)
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    font-size: 12px;
+  }
+
+  /*Navigation bar*/
+
+  header {
+    background-color: var(--secondary-color);
+  }
+  
+  .nav__list {
+    display: flex;
+    column-gap: 2rem;
+    padding: 0.85rem 2rem;
+    list-style: none;
+  }
+  
+  .nav__link {
+    font-size: 1rem;
+    color: var(--color1-1);
+    text-decoration: none;
+    transition: all 0.5s ease;
+  }
+  
+  .nav__link:hover {
+    color: var(--color2-2);
+  }
+  
+  .nav__link:hover {
+    text-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+      0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .container{
+    padding: 2em 4em;
+  }
