@@ -1,57 +1,65 @@
-<form method="POST" enctype="multipart/form-data" action="">
-    <div class="btn-group" role="group" aria-label="">
-        <button type="submit" name="action" value="save"  class="btn btn-success">Save</button>
-        <button type="submit" name="action" value="cancel"  class="btn btn-warning">Cancel</button>
-        <button type="submit" name="action" value="delete"  class="btn btn-warning">Delete</button>
+<div class="alert"></div>
+<div class="body__container__form">
+  <div class="container__form">
+    <form class="form__data" action="" method="POST">
+        <fieldset>
+            <legend>Edit course # <?php echo $course['id']; ?></legend>
+            <div class="data__fields">
+                <div class="form__divided">
+                    <div class="data__left__side">
+                        <div class="container__form__image"> 
+                            <img
+                                src="../../../../src/assets/img/<?php echo $course['thumbnail']; ?>"
+                                class="image__avatar image__square"
+                            />
+                            <input type="file" class="image__input" id="image__input" name="resourceUrl" accept="image/*" />
+                            <label for="image__input" class="image__label image__square">
+                                Choose Photo
+                            </label>
+                        </div>        
+                    </div>
+                    <div class="data__right__side"> 
+                        <div class="fields">
+                            <label for="courseTitle">Title</label>
+                            <input type="text" required name="courseTitle" id="courseTitle" placeholder="Title" value="<?php echo $course['title']; ?>">
+                        </div>
+
+                        <div class="fields__divided">
+
+                            <div class="fields">
+                                <label for="courseType">Type</label>
+                                <input type="text" required name="courseType" id="courseType" placeholder="Type" value="<?php echo $course['type']; ?>">
+                            </div>
+
+                            <div class="fields">
+                                <label for="courseLevel">Level</label>
+                                <select id="courseLevel" name="courseLevel">
+                                    <?php for ($i=1; $i<=10; $i++){ ?>
+                                        <option <?php  echo ($course['level']==$i)?"selected ":""; ?> value="<?php echo $i; ?>">Level <?php echo $i; ?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <textarea
+                    placeholder="Description..."
+                    name="courseDescription"
+                    required
+                    id="courseDescription"
+                    cols="30"
+                    rows="9"
+                ><?php echo $course['description'];?></textarea>
+            </div>
+
+            <div class="btn__container" >
+                <button type="submit" name="action" value="save"  class="btn__submit btn__save">SAVE</button>
+                <button type="submit" name="action" value="cancel"  class="btn__submit btn__cancel">CANCEL</button>
+                <button type="submit" name="action" value="delete"  class="btn__submit btn__delete">DELETE</button>
+            </div>
+            <input type="hidden" value="<?php echo $course['id']; ?>" name="courseId">
+        </fieldset>
+        </form>
     </div>
-
-    <div class = "form-group">
-        <label for="courseId">ID:</label>
-        <input type="text" required readonly class="form-control" value="<?php echo $course['id']; ?>" name="courseId" id="courseId">
-    </div>
-
-    <div class = "form-group">
-        <label for="courseTitle">Title:</label>
-        <input type="text" required class="form-control" value="<?php echo $course['title']; ?>" name="courseTitle" id="courseTitle" placeholder="Title">
-    </div>
-
-    <div class = "form-group">
-        <label for="courseType">Type:</label>
-        <input type="text" required class="form-control" value="<?php echo $course['type']; ?>" name="courseType" id="courseType" placeholder="Type">
-    </div>
-
-    <div class = "form-group">
-        <label for="courseDescription">Description:</label>
-        <input type="text" required class="form-control" value="<?php echo $course['description']; ?>" name="courseDescription" id="courseDescription" placeholder="courseDescription">
-    </div>
-
-    <div class = "form-group">
-        <label for="courseThumbail">Image:</label>
-        <input type="file" class="form-control" name="courseThumbail" id="courseThumbail" placeholder="Image">
-    </div>
-
-    <br/>
-    <br/>
-    
-    <div class="btn-group" role="group" aria-label="">
-
-        <div class = "form-group">
-            <label for="resourceName">Name:</label>
-            <input type="text" class="form-control"  name="resourceName" id="resourceName" placeholder="Resource Name">
-        </div>
-
-        <div class = "form-group">
-            <label for="resourceType">Type:</label>
-            <input type="text" class="form-control" name="resourceType" id="resourceType" placeholder="Select a file">
-        </div>
-
-        <div class = "form-group">
-            <label for="resourceUrl">File:</label>
-            <input type="file" class="form-control" name="resourceUrl" id="resourceUrl" placeholder="Resource url">
-        </div>
-
-        <div class = "form-group">
-            <button type="submit" name="action" value="addResource"  class="btn btn-success">Add resource</button>
-        </div>
-    </div>
-</form>
+</div>

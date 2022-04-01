@@ -8,7 +8,17 @@ if($_POST){//cuando terminamos de editar el curso lo guardamos en la db (posible
     switch($action){
         case "save":
             include("../functions/db-student-CRUD.php");
-            updateStudent($_POST['studentId'], $_POST['studentUser'], $_POST['studentPassword'], $_POST['studentName'], $_POST['studentLastName'], $_POST['studentStudiesLevel'], $_POST['studentInterest']);
+            updateStudent($_POST['studentId'], 
+                        $_POST['studentUser'], 
+                        $_POST['studentPassword'], 
+                        $_POST['studentName'], 
+                        $_POST['studentLastName'],
+                        $_POST['studentGender'], 
+                        $_POST['studentDateOfBirth'], 
+                        $_POST['studentEmail'], 
+                        $_POST['studentLevel'], 
+                        $_POST['studentInterest'],
+                        $_POST['studentLevel']);
             header("Location:students.php");
             break;
 
@@ -33,7 +43,7 @@ else if($_GET){
 
     if(isset($student)){
         include("../templates/student-edition.php");
-    } 
+    }
 }
 ?>
 <?php include("../templates/footer.php"); ?>

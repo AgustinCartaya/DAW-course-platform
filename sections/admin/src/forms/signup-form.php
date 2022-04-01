@@ -25,7 +25,7 @@
 
           <a class="btn__link" href="signin.php">Sign in</a>
         </div>
-        <button type="submit" class="btn__submit" id="submit" >Sign up</button>
+        <button type="submit" class="btn__submit btn__unique" id="submit" >Sign up</button>
       </fieldset>
     </form>
   </div>

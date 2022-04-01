@@ -16,22 +16,24 @@ function getAdminCourses($idAdmin){
     return $query->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function createCourse($idAdmin, $title, $type, $description, $thumbnail){
+function createCourse($idAdmin, $title, $type, $level,  $description, $thumbnail){
     include("../config/db.php");
-    $query=$conection->prepare("INSERT INTO COURSES (idAdmin, title, type, description, thumbnail) VALUES (:idAdmin, :title, :type, :description, :thumbnail)");
+    $query=$conection->prepare("INSERT INTO COURSES (idAdmin, title, type, level, description, thumbnail) VALUES (:idAdmin, :title, :type, :level, :description, :thumbnail)");
     $query->bindParam(':idAdmin', $idAdmin);
     $query->bindParam(':title', $title);
     $query->bindParam(':type', $type);
+    $query->bindParam(':level', $level);
     $query->bindParam(':description', $description);
     $query->bindParam(':thumbnail', $thumbnail);
     $query->execute();
 }
 
-function updateCourse($id, $title, $type, $description, $thumbnail){
+function updateCourse($id, $title, $type, $level, $description, $thumbnail){
     include("../config/db.php");
-    $query=$conection->prepare("UPDATE COURSES SET title=:title, type=:type, description=:description, thumbnail=:thumbnail WHERE id=:id");
+    $query=$conection->prepare("UPDATE COURSES SET title=:title, type=:type, level=:level, description=:description, thumbnail=:thumbnail WHERE id=:id");
     $query->bindParam(':title', $title);
     $query->bindParam(':type', $type);
+    $query->bindParam(':level', $level);
     $query->bindParam(':description', $description);
     $query->bindParam(':thumbnail', $thumbnail);
     $query->bindParam(':id', $id);

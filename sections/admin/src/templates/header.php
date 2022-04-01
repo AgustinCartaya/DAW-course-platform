@@ -19,21 +19,22 @@ session_start();
     <link rel="stylesheet" href="../../../../src/styles/global.css">
     <link rel="stylesheet" href="../../../../src/styles/form-styles.css" />
     <link rel="stylesheet" href="../styles/global.css">
-    <link rel="stylesheet" href="../styles/students.css">
-
 
 
     <title>Web site admin</title>
 </head>
 <body>
     
-    <?php $url="http://".$_SERVER['HTTP_HOST']."/L3-DAW/project/website"?>
+    <?php 
+        include("../../../../src/functions/util.php");
+        $url=getWebPath();
+    ?>
 
 
     <header class="container__header">
       <nav class="nav__list">
         <li class="nav__item"><a class="nav__link" href="#"><strong>Admin settings</strong></a></li>
-        <li class="nav__item"><a class="nav__link" href="#">Home</a></li>
+        <li class="nav__item"><a class="nav__link" href="<?php echo $url;?>/sections/admin/src/pages/home.php">Home</a></li>
         <li class="nav__item"><a class="nav__link" href="<?php echo $url;?>/sections/admin/src/pages/courses.php">Courses</a></li>
         <li class="nav__item"><a class="nav__link" href="<?php echo $url;?>/sections/admin/src/pages/students.php">Students</a></li>
         <li class="nav__item"><a class="nav__link" href="<?php echo $url;?>/sections/admin/src/pages/signout.php">Sign out</a></li>
@@ -42,3 +43,5 @@ session_start();
 
     <div class="container">
         <div class="row">
+
+

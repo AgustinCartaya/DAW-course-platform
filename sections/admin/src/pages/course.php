@@ -8,7 +8,7 @@ if($_POST){//cuando terminamos de editar el curso lo guardamos en la db (posible
     switch($action){
         case "save":
             include("../functions/db-course-CRUD.php");
-            updateCourse($_POST['courseId'], $_POST['courseTitle'], $_POST['courseType'], $_POST['courseDescription'], "image.jpg");
+            updateCourse($_POST['courseId'], $_POST['courseTitle'], $_POST['courseType'], $_POST['courseLevel'], $_POST['courseDescription'], "image.jpg");
             header("Location:courses.php");
             break;
 

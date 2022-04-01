@@ -10,23 +10,22 @@
             <div class="container__form__image"> 
               <img
                 src="https://images.unsplash.com/profile-fb-1642446137-6bae7cc893b9.jpg?dpr=2&auto=format&fit=crop&w=60&h=60&q=60&crop=faces&bg=fff"
-                class="image__avatar"
+                class="image__avatar image__circle"
               />
-              <input type="file" id="image__input" name="studentImage" accept="image/*" />
-              <label for="image__input" id="image__label">
-                Choose Photo
+              <input type="file" class="image__input" id="image__input" name="courseThumbail" accept="image/*" />
+              <label for="image__input" class="image__label image__circle">
+                  Choose Photo
               </label>
             </div>
 
             <!-- fill with the DB or with a JSON file -->
             <div class="fields__end">
               <div class="fields">
-                  <label for="studentStudiesLevel">Studies level</label>
-                  <select id="studentStudiesLevel" name="studentStudiesLevel">
-                    <option value="INITIAL">Initial</option>
-                    <option value="BACHELOR">Bacherlor</option>
-                    <option value="MASTER">Master</option>
-                    <option value="PHD">PhD</option>
+                  <label for="studentLevel">Level</label>
+                  <select id="studentLevel" name="studentLevel">
+                      <?php for ($i=1; $i<=10; $i++){ ?>
+                          <option value="<?php echo $i ?>">Level <?php echo $i ?></option>
+                      <?php } ?>
                   </select>
               </div>
 
@@ -81,10 +80,9 @@
               <label for="studentRepeatPassword">Repeat password</label>
               <input type="password" name="studentRepeatPassword" id="studentRepeatPassword"/>
             </div>
-
           </div>
         </div>
-        <button class="btn__submit" id="submit" type="submit">SEND</button>
+        <button class="btn__submit btn__unique" id="submit" type="submit">CREATE</button>
       </fieldset>
     </form>
   </div>
