@@ -39,7 +39,7 @@ h3 {
 
 /*Navigation bar*/
 header {
-  background-color: red;
+  background-color: var(--secondary-color);
 }
 
 .nav__list {
