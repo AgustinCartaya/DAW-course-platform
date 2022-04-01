@@ -34,10 +34,10 @@ session_start();
     <header class="container__header">
       <nav class="nav__list">
         <li class="nav__item"><a class="nav__link" href="#"><strong>Admin settings</strong></a></li>
-        <li class="nav__item"><a class="nav__link" href="<?php echo $url;?>/sections/admin/src/pages/home.php">Home</a></li>
-        <li class="nav__item"><a class="nav__link" href="<?php echo $url;?>/sections/admin/src/pages/courses.php">Courses</a></li>
-        <li class="nav__item"><a class="nav__link" href="<?php echo $url;?>/sections/admin/src/pages/students.php">Students</a></li>
-        <li class="nav__item"><a class="nav__link" href="<?php echo $url;?>/sections/admin/src/pages/signout.php">Sign out</a></li>
+        <li class="nav__item"><a class="nav__link" href="<?php echo $url;?>/sections/admin/src/controllers/home.php">Home</a></li>
+        <li class="nav__item"><a class="nav__link" href="<?php echo $url;?>/sections/admin/src/controllers/courses.php">Courses</a></li>
+        <li class="nav__item"><a class="nav__link" href="<?php echo $url;?>/sections/admin/src/controllers/students.php">Students</a></li>
+        <li class="nav__item"><a class="nav__link" href="<?php echo $url;?>/sections/admin/src/controllers/signout.php">Sign out</a></li>
       </nav>
     </header>
 

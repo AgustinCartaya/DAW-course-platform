@@ -1,7 +1,7 @@
 <?php 
 session_start();
 if(isset($_SESSION['adminVerification']))
-    header("Location:src/pages/home.php");
+    header("Location:src/controllers/home.php");
 else
-    header("Location:src/pages/signin.php");
+    header("Location:src/controllers/signin.php");
 ?>

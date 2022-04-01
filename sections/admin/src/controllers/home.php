@@ -1,3 +1,3 @@
 <?php include("../templates/header.php"); ?>
-<h1>Init</h1>
+<?php include("../views/home-content.php"); ?>
 <?php include("../templates/footer.php"); ?>
