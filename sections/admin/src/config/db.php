@@ -1,11 +1,7 @@
 <?php
-$dbHost="localhost";
-$db="daw_project";
-$dbUser="root";
-$dbPassword="";
-
 try{
-    $conection=new PDO("mysql:host=$dbHost;dbname=$db",$dbUser,$dbPassword);
+    echo APP_IMAGES;
+    $conection=new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME, DB_USER, DB_PASSWORD);
 }catch(Exception $ex){
     echo $ex->getMessage();
 }
