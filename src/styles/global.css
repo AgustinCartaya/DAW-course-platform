@@ -108,3 +108,18 @@ header {
   font-size: 0.8rem;
   color: var(--secondary-color);
 }
+
+/* Progress bar */
+
+.load-bar {
+  width: 40%;
+  background-color: rgba(143, 143, 143, 0.788);
+  height: 20px;
+}
+
+.progress {
+  display: block;
+  width: 0;
+  height: 100%;
+  background-color: blue;
+}
