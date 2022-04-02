@@ -1,29 +1,27 @@
 <div class="alert"></div>
 <div class="body__container__form">
-  <div class="container__form">
-    <form class="form__data" method="POST">
-      <fieldset>
-        <legend>Create new student</legend>
-        <div class="data__fields form__divided">
-        <!-- parent container created (some css of app__image put on paretnt container) -->
-          <div class="data__left__side"> 
-            <div class="container__form__image"> 
-              <img
-                src="<?php echo W_IMAGES;?>/student.png"
-                class="image__avatar image__circle"
-              />
-              <input type="file" class="image__input" id="image__input" name="courseThumbail" accept="image/*" />
-              <label for="image__input" class="image__label image__circle">
-                  Choose Photo
-              </label>
-            </div>
+    <div class="container__form">
+        <form class="form__data" method="POST">
+            <fieldset>
+                <legend>Create new student</legend>
+                <div class="data__fields form__divided">
+                    <!-- parent container created (some css of app__image put on paretnt container) -->
+                    <div class="data__left__side">
+                        <div class="container__form__image">
+                            <img src="<?php echo W_IMAGES;?>/student.png" class="image__avatar image__circle" />
+                            <input type="file" class="image__input" id="image__input" name="courseThumbail"
+                                accept="image/*" />
+                            <label for="image__input" class="image__label image__circle">
+                                Choose Photo
+                            </label>
+                        </div>
 
                         <!-- fill with the DB or with a JSON file -->
                         <div class="fields__end">
                             <div class="fields">
                                 <label for="studentLevel">Level</label>
                                 <select id="studentLevel" name="studentLevel">
-                                    <?php for ($i=1; $i<=10; $i+=2){ ?>
+                                    <?php for ($i=1; $i<=10; $i++){ ?>
                                     <option value="<?php echo $i ?>">Level <?php echo $i ?></option>
                                     <?php } ?>
                                 </select>
