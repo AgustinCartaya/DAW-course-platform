@@ -15,6 +15,8 @@
                             <label for="image__input"  class="image__label image__circle">
                             Choose Photo
                             </label>
+                            <input type="hidden"  name="studentImage_res" value="<?php echo $student['image'];?>" accept="image/*" />
+
                         </div>
 
                         <div class="fields__end">

@@ -8,6 +8,15 @@ if($_POST){//cuando terminamos de editar el curso lo guardamos en la db (posible
 
     switch($action){
         case "save":
+            include("../functions/util.php");
+            $studentImageName=(isset($_FILES['studentImage']['name']))?$_FILES['studentImage']['name']:"";
+            $studentImageTemp=(isset($_FILES['studentImage']['tmp_name']))?$_FILES['studentImage']['tmp_name']:"";
+            $studentImage = makeImageCopy($studentImageName, $studentImageTemp, "");
+            if(empty($studentImage))
+                $studentImage=$_POST['studentImage_res'];
+            else
+                deleteImage($_POST['studentImage_res']);
+
             updateStudent($_POST['studentId'], 
                         $_POST['studentUser'], 
                         $_POST['studentPassword'], 
@@ -18,7 +27,7 @@ if($_POST){//cuando terminamos de editar el curso lo guardamos en la db (posible
                         $_POST['studentEmail'], 
                         $_POST['studentLevel'], 
                         $_POST['studentInterest'],
-                        $_POST['studentLevel']);
+                        $studentImage);
             header("Location:students.php");
             break;
 
@@ -27,6 +36,8 @@ if($_POST){//cuando terminamos de editar el curso lo guardamos en la db (posible
             break;    
 
         case "delete":
+            include("../functions/util.php");
+            deleteImage($_POST['studentImage_res']);
             deleteStudent($_POST['studentId']);
             header("Location:students.php");
             break;    

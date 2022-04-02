@@ -8,7 +8,21 @@ if($_POST){//cuando terminamos de editar el curso lo guardamos en la db (posible
 
     switch($action){
         case "save":
-            updateCourse($_POST['courseId'], $_POST['courseTitle'], $_POST['courseType'], $_POST['courseLevel'], $_POST['courseDescription'], $_POST['courseThumbnail']);
+            include("../functions/util.php");
+            $courseImageName=(isset($_FILES['courseThumbnail']['name']))?$_FILES['courseThumbnail']['name']:"";
+            $courseImageTemp=(isset($_FILES['courseThumbnail']['tmp_name']))?$_FILES['courseThumbnail']['tmp_name']:"";
+            $courseImage = makeImageCopy($courseImageName, $courseImageTemp, "");
+            if(empty($courseImage))
+                $courseImage=$_POST['courseThumbnail_res'];
+            else
+                deleteImage($_POST['courseThumbnail_res']);
+            
+            updateCourse($_POST['courseId'],
+                        $_POST['courseTitle'], 
+                        $_POST['courseType'], 
+                        $_POST['courseLevel'], 
+                        $_POST['courseDescription'], 
+                        $courseImage);
             header("Location:courses.php");
             break;
 
@@ -17,8 +31,8 @@ if($_POST){//cuando terminamos de editar el curso lo guardamos en la db (posible
             break;    
 
         case "delete":
-            deleteImage($_POST['courseThumbnail']);
-            deleteCourseResources($_POST['courseId']):
+            include("../functions/util.php");
+            deleteImage($_POST['courseThumbnail_res']);
             deleteCourse($_POST['courseId']);
             header("Location:courses.php");
             break;    

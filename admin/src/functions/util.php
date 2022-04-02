@@ -12,7 +12,9 @@ function makeImageCopy($name, $tmpName, $errorName){
 }
 
 function deleteImage($name){
-    if(!is_null($name)  && file_exists(W_IMAGES."/".$name))
-        unlink(W_IMAGES."/".$name)
+    if(!is_null($name) && !empty($name) && file_exists(APP_IMAGES."/".$name)){
+        unlink(APP_IMAGES."/".$name);
+    }
+        
 }
 

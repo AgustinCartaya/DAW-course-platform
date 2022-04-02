@@ -1,7 +1,7 @@
 <div class="alert"></div>
 <div class="body__container__form">
   <div class="container__form">
-    <form class="form__data" action="" method="POST">
+    <form class="form__data" action="" method="POST" enctype="multipart/form-data">
         <fieldset>
             <legend>Edit course # <?php echo $course['id']; ?></legend>
             <div class="data__fields">
@@ -16,6 +16,8 @@
                             <label for="image__input" class="image__label image__square">
                                 Choose Photo
                             </label>
+                            <input type="hidden"  name="courseThumbnail_res" value="<?php echo $course['thumbnail'];?>" accept="image/*" />
+
                         </div>        
                     </div>
                     <div class="data__right__side"> 

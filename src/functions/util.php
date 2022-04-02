@@ -11,6 +11,9 @@ function defaultImage($type){
         case "resource":
             return W_IMAGES."/".W_IMG_RESOURCE;
             break;
+        default:
+            return NULL;
+            break;
     }
 }
 
@@ -25,12 +28,15 @@ function defaultResourcePreview($type){
         case "video":
             return W_IMAGES."/".W_IMG_VIDEO;
             break;
+        default:
+            return NULL;
+            break;
     }
 }
 
 
 function verifyImage($name, $type){
-    if(!is_null($name) && file_exists(W_IMAGES."/".$name))
+    if(!is_null($name) && file_exists(APP_IMAGES."/".$name))
         return W_IMAGES."/".$name;
     return defaultImage($type);
 }

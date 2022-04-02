@@ -10,8 +10,7 @@
         include("../functions/util.php");
         $studentImageName=(isset($_FILES['studentImage']['name']))?$_FILES['studentImage']['name']:"";
         $studentImageTemp=(isset($_FILES['studentImage']['tmp_name']))?$_FILES['studentImage']['tmp_name']:"";
-        echo "Al inicio".$studentImageName."---".$studentImageTemp."---";
-        $studentImage = makeImageCopy($studentImageName, $studentImageTemp, "student.png");
+        $studentImage = makeImageCopy($studentImageName, $studentImageTemp, "");
 
         createStudent($_POST['studentName'], 
                         $_POST['studentPassword'], 
