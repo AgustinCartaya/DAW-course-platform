@@ -23,7 +23,7 @@
                             <div class="fields">
                                 <label for="studentLevel">Level</label>
                                 <select id="studentLevel" name="studentLevel">
-                                    <?php for ($i=1; $i<=10; $i+=2){ ?>
+                                    <?php for ($i=1; $i<=10; $i++){ ?>
                                     <option value="<?php echo $i ?>">Level <?php echo $i ?></option>
                                     <?php } ?>
                                 </select>
