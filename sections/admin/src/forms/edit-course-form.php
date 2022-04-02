@@ -9,7 +9,7 @@
                     <div class="data__left__side">
                         <div class="container__form__image"> 
                             <img
-                                src="../../../../src/assets/img/<?php echo $course['thumbnail']; ?>"
+                                src="<?php echo W_IMAGES;?>/<?php echo $course['thumbnail']; ?>"
                                 class="image__avatar image__square"
                             />
                             <input type="file" class="image__input" id="image__input" name="resourceUrl" accept="image/*" />

@@ -42,7 +42,7 @@ else if($_GET){
     $student=getStudentById($studentId);
 
     if(isset($student)){
-        include("../templates/student-edition.php");
+        include("../views/student-edition.php");
     }
 }
 ?>

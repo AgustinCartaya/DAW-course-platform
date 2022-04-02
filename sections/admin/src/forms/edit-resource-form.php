@@ -8,7 +8,7 @@
             <div class="data__fields">
                 <div class="container__form__image"> 
                     <img
-                        src="https://danieljml.github.io/App-Movies/static/media/placeholder.2a99ab22.jpg"
+                        src="<?php echo W_IMAGES;?>/resource.png"
                         class="image__avatar image__square"
                     />
                     <input type="file" class="image__input" id="image__input" name="resourceUrl" accept="image/*" />

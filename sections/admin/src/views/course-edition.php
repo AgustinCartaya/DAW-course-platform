@@ -14,7 +14,7 @@
                     <div class="card__item">
                         <button>
                             <img
-                            src= "https://danieljml.github.io/App-Movies/static/media/placeholder.2a99ab22.jpg"
+                            src= "<?php echo W_IMAGES;?>/resource.png"
                             alt=""
                             />
                             <span><?php echo $resource['type'];?></span>

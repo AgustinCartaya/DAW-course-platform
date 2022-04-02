@@ -1,7 +1,7 @@
 <form method="GET" action="course.php" class="card__item">
     <button type="submit" class>
         <img
-        src="../../../../src/assets/img/<?php echo $course["thumbnail"]; ?>"
+        src="<?php echo W_IMAGES."/".$course["thumbnail"];?>"
         alt=""
         />
         <span><?php echo $course['type'];?></span>

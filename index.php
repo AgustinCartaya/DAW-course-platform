@@ -1,13 +1,3 @@
-<?php 
-
-
-    if ( file_exists( APP_ROOT . 'config.php' ) ) {
-        /** The config file resides in ABSPATH */
-        require_once APP_ROOT . 'config.php';
-    } 
-   
-?>
-
 
 <!DOCTYPE html>
 <html lang="en">

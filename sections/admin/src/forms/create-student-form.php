@@ -9,7 +9,7 @@
           <div class="data__left__side"> 
             <div class="container__form__image"> 
               <img
-                src="https://images.unsplash.com/profile-fb-1642446137-6bae7cc893b9.jpg?dpr=2&auto=format&fit=crop&w=60&h=60&q=60&crop=faces&bg=fff"
+                src="<?php echo W_IMAGES;?>/student.png"
                 class="image__avatar image__circle"
               />
               <input type="file" class="image__input" id="image__input" name="courseThumbail" accept="image/*" />

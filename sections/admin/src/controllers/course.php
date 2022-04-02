@@ -44,7 +44,7 @@ else if($_GET){
     $resources=getCourseResources($courseId);
 
     if(isset($course)){
-        include("../templates/course-edition.php");
+        include("../views/course-edition.php");
     } 
 }
 ?>

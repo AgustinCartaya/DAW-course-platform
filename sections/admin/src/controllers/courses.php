@@ -8,7 +8,7 @@
         include("../functions/util.php");
         $courseImageName=(isset($_FILES['courseThumbnail']['name']))?$_FILES['courseThumbnail']['name']:"";
         $courseImageTemp=(isset($_FILES['courseThumbnail']['tmp_name']))?$_FILES['courseThumbnail']['tmp_name']:"";
-        $courseImage = makeImageCopy($courseImageName, $courseImageTemp, "course.jpg");
+        $courseImage = makeImageCopy($courseImageName, $courseImageTemp, "course.png");
 
         createCourse($userId,
                     $_POST['courseTitle'], 
