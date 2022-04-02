@@ -14,8 +14,8 @@
 <body>
     <div class="container__app">
         <div class="app">
-            <a class="app__btn left" href="sections/student">Student</a>
-            <a class="app__btn right" href="sections/admin">Admin</a>
+            <a class="app__btn left" href="student">Student</a>
+            <a class="app__btn right" href="admin">Admin</a>
         </div>
     </div>
 </body>
