@@ -26,6 +26,8 @@ session_start();
     <link rel="stylesheet" href="../../../../src/styles/form-styles.css" />
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/home-content.css">
+    <link rel="stylesheet" href="../styles/create-student-form.css">
+
     <title>Web site admin</title>
 </head>
 
