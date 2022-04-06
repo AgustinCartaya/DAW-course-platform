@@ -1,7 +1,9 @@
 <?php include_once("../templates/sign-header.php"); ?>
 <?php
 //signin validation
+// echo "Nada";
 if($_POST){
+    echo "Algo";
     $user=$_POST['user'];
     $password=$_POST['password'];
 
@@ -18,6 +20,10 @@ if($_POST){
     }else{
         $messageError="Error: user name or password are incorrects";
     }
+}
+
+if($_GET){
+    echo "Algo222"; 
 }
 ?>
 <?php include_once("../forms/signin-form.php"); ?>
