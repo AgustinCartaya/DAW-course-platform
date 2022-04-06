@@ -31,9 +31,9 @@
                 </div>
             </div>
             <div class="btn__container" >
-                <button type="button" name="action" value="addResource"  class="btn__submit btn__save btn__small">ADD</button>
-                <button type="button" name="action" value="cancelResource"  class="btn__submit btn__cancel btn__small">CANCEL</button>
-                <button type="button" name="action" value="deleteResource"  class="btn__submit btn__delete btn__small">DELETE</button>
+                <button type="button" name="action" value="addResource" id="addResource" class="btn__submit btn__save btn__small">ADD</button>
+                <button type="reset" name="action" value="cancelResource" id="cancelResource" class="btn__submit btn__cancel btn__small">CANCEL</button>
+                <button type="button" disabled name="action" value="deleteResource" id="deleteResource" class="btn__submit btn__delete btn__small">DELETE</button>
             </div>
             <input type="hidden" value="<?php echo $course['id']; ?>" name="courseId">
             </fieldset>

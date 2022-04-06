@@ -58,4 +58,5 @@ else if($_GET){
     } 
 }
 ?>
+<script src="<?php echo ADMIN_SCRIPTS.'/resources.js'?>"></script>
 <?php include("../templates/footer.php"); ?>
