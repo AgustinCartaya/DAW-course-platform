@@ -2,7 +2,7 @@
 <div class="alert"></div>
 <div class="body__container__form">
   <div class="container__form">
-    <form class="form__data" action="" method="POST">
+    <form class="form__data" method="POST" enctype="multipart/form-data">
         <fieldset>
             <legend>Add resource</legend>
             <div class="data__fields">
@@ -11,7 +11,7 @@
                         src="<?php echo defaultImage('resource');?>"
                         class="image__avatar image__square"
                     />
-                    <input type="file" class="image__input" id="image__input" name="resourceUrl" accept="image/*" />
+                    <input type="file" class="image__input" id="image__input" name="resourceUrl" accept="image/*,application/pdf,video/*" />
                     <label for="image__input" class="image__label image__square">
                         Choose Resource
                     </label>
