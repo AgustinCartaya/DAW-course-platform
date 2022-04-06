@@ -38,8 +38,11 @@ if($_POST){//cuando terminamos de editar el curso lo guardamos en la db (posible
             break;    
 
         case "addResource":
+            echo $_POST['courseId'];
+            echo $_POST['resourceName'];
+            echo $_POST['resourceType'];
+            echo $_POST['resourceUrl'];
             createResource($_POST['courseId'], $_POST['resourceName'], $_POST['resourceType'], $_POST['resourceUrl']);
-            header("Location:course.php?courseId=$_POST['courseId']");
             break;  
     }
 }

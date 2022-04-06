@@ -1,0 +1,25 @@
+.container__home {
+  display: grid;
+  row-gap: 1.5rem;
+  color: #ffffff;
+  padding: 0 0.5rem;
+}
+
+.home_title {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 2.5rem;
+  border-bottom: 1px solid rgba(170, 170, 170, 0.781);
+}
+
+.home_container_btn {
+  display: flex;
+  justify-content: center;
+  column-gap: 3rem;
+}
+
+.statistics__title {
+  text-align: start;
+  text-transform: uppercase;
+}
