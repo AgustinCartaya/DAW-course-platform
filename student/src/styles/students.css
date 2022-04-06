@@ -1,0 +1,5 @@
+.body__container__divided {
+    display: grid;
+    grid-template-columns: 40% auto;
+    grid-template-rows: 1fr;
+}
