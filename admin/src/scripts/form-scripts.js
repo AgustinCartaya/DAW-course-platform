@@ -1,38 +1,25 @@
-import "./styles.css";
-import messages from "./data/messages.json";
-import alertInfo from "./functions/alertInfo";
-import validEmail from "./functions/validEmail";
 import {
-  fillThisInputError,
-  invalidInput,
-  desactiveInputError
-} from "./functions/outlineErrors";
-import {
-  fillThisInputSucess,
-  desactiveInputSuccess
-} from "./functions/oulineSuccess";
-import {
-  btnSubmit,
-  popup,
-  inputs,
-  inputValues,
-  inputFile,
-  avatar,
-  genders,
-  changeMode
-} from "./data/variables";
+  alert,
+  allInputTags,
+  fileInputTag,
+  thumbnail,
+  form,
+  messages,
+} from "./data/variables.js";
+import { validUserName } from "./functions/FormValidation.js";
+import alertInfo from "./functions/alertInfo.js";
 
-if (inputFile) {
-  inputFile.addEventListener("change", (e) => {
+if (fileInputTag) {
+  fileInputTag.addEventListener("change", (e) => {
     const file = e.target.files[0];
     if (file) {
       const fileReader = new FileReader();
       fileReader.readAsDataURL(file);
       fileReader.addEventListener("load", (e) => {
-        avatar.setAttribute("src", e.target.result);
+        thumbnail.setAttribute("src", e.target.result);
       });
     } else {
-      avatar.setAttribute(
+      thumbnail.setAttribute(
         "src",
         "https://images.unsplash.com/profile-fb-1642446137-6bae7cc893b9.jpg?dpr=2&auto=format&fit=crop&w=60&h=60&q=60&crop=faces&bg=fff"
       );
@@ -40,59 +27,34 @@ if (inputFile) {
   });
 }
 
-if (btnSubmit) {
-  btnSubmit.addEventListener("click", (e) => {
-    e.preventDefault();
-    popup.classList.add("active");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  alert.classList.add("active");
+  const values = new FormData(form);
+  if (values.get("user") == "" || values.get("password") == "") {
+    const { type, message, icon } = messages[1];
+    alertInfo(type, message, icon);
+    console.log("Rellena los inputs");
+  } else if (validUserName(values.get("user"))) {
+    const { type, message, icon } = messages[2];
+    alertInfo(type, message, icon);
+    console.log("usuario invalido: " + values.get("user"));
+  } else {
+    const { type, message, icon } = messages[0];
+    alertInfo(type, message, icon);
+    console.log(
+      "Datos enviados con exito: " + values.get("user"),
+      values.get("password")
+    );
 
-    const values = inputValues();
-    const [
-      image,
-      name,
-      lastname,
-      date,
-      email,
-      password,
-      repeatPassword
-    ] = values;
-    const [, , , , InputEmail, InputPassword, InputRepeatPassword] = inputs;
-
-    const gender = genders.value;
-    if (values.some((inputValue) => inputValue === "")) {
-      const { type, message, icon } = messages[1];
-      alertInfo(type, message, icon);
-      fillThisInputError();
-      console.log("Rellenar los inputs");
-    } else if (validEmail(email)) {
-      const { type, message, icon } = messages[2];
-      alertInfo(type, message, icon);
-      invalidInput(InputEmail);
-      console.log("Email invalido");
-    } else if (password !== repeatPassword) {
-      const { type, message, icon } = messages[3];
-      alertInfo(type, message, icon);
-      invalidInput(InputPassword);
-      invalidInput(InputRepeatPassword);
-      console.log("Las contraseñas no son iguales");
-    } else {
-      const { type, message, icon } = messages[0];
-      alertInfo(type, message, icon);
-      genders.style.outline = "1px solid #43a854";
-      fillThisInputSucess();
-      console.log(`Los datos han sido enviado con exito,
-      imagen: ${image}, nombre y apellido: ${name}
-      ${lastname}, fecha de nacimiento: ${date}, correo: ${email},
-      genero: ${gender}`);
-    }
-
-    return setTimeout(() => {
-      popup.classList.remove("active");
-      genders.style.outline = "unset";
-      desactiveInputSuccess();
-      desactiveInputError();
-    }, 2800);
-  });
-}
-
-if (changeMode) {
-}
+    fetch("signin.php", {
+      method: "POST",
+      body: values,
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  }
+  return setTimeout(() => {
+    alert.classList.remove("active");
+  }, 2800);
+});

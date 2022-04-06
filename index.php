@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +11,7 @@
 
     <title>DAW-Projet</title>
 </head>
+
 <body>
     <div class="container__app">
         <div class="app">
@@ -18,7 +19,7 @@
             <a class="app__btn right" href="admin">Admin</a>
         </div>
     </div>
+    <script src="./src/scripts/form-scripts.js"></script>
 </body>
+
 </html>
-
-

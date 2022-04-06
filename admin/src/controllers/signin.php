@@ -22,5 +22,3 @@ if($_POST){
 ?>
 <?php include_once("../forms/signin-form.php"); ?>
 <?php include_once("../templates/sign-footer.php"); ?>
-
-
