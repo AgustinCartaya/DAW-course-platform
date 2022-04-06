@@ -18,6 +18,7 @@ if($_POST){
         header('Location:home.php');
     }else{
         $messageError="Error: user name or password are incorrects";
+        
     }
 }
 ?>
