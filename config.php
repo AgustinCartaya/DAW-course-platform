@@ -3,7 +3,7 @@
 /** Global Folders */
 define( 'APP_ROOT', $_SERVER['DOCUMENT_ROOT'].'/DAW-project');
 define( 'APP_ADMIN', APP_ROOT.'/admin' );
-define( 'APP_STUDENT', APP_ROOT.'/students' );
+define( 'APP_STUDENT', APP_ROOT.'/student' );
 define( 'APP_IMAGES', APP_ROOT.'/src/assets/img' );
 define( 'APP_FUNCTIONS', APP_ROOT.'/src/functions' );
 define( 'APP_STYLES', APP_ROOT.'/src/styles' );
