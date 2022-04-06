@@ -5,6 +5,6 @@ if ( ! defined( 'APP_ROOT' ) ) {
 }
 /** global pages */
 define( 'STUDENT_STYLES', W_STUDENT."/src/styles" );
-define( 'STUDENT_TEMPLATES', W_STUDENT."/src/styles" );
+define( 'STUDENT_TEMPLATES', W_STUDENT."/src/templates" );
 
 ?>

@@ -1,11 +1,11 @@
 <?php
 function getStudentIdByLogin($studentName, $studentPassword){
-    include("../config/db.php");
+    include("db-connection.php");
     $query=$conection->prepare("SELECT id FROM students WHERE user=:user AND password=:password");
     $query->bindParam(':user', $studentName);
     $query->bindParam(':password', $studentPassword);
     $query->execute();
-    return $query->fetchAll(PDO::FETCH_LAZY);
+    return $query->fetch(PDO::FETCH_LAZY);
 }
 
 
