@@ -9,7 +9,7 @@
             <h3>Resources</h3>
             <div class="resource__container__divided">
                 <?php include("../forms/edit-resource-form.php"); ?>  
-                <div class="cards__container resource__card__list">  
+                <div id="resourcesCardsContainer" class="cards__container resource__card__list">  
                     <?php foreach($resources as $resource){ ?>
                     <div class="card__item">
                         <button>

@@ -3,7 +3,7 @@
 //signin validation
 // echo "Nada";
 if($_POST){
-    echo "Algo";
+    // echo "Algo";
     $user=$_POST['user'];
     $password=$_POST['password'];
 
