@@ -31,8 +31,8 @@ if (fileInputTag) {
   });
 }
 
-form.addEventListener("click", (e) => {
-  // e.preventDefault();
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
   alert.classList.add("active");
   const values = new FormData(form);
   console.log(values);
