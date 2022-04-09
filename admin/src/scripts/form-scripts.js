@@ -32,7 +32,6 @@ if (fileInputTag) {
 }
 
 form.addEventListener("submit", (e) => {
-  e.preventDefault();
   alert.classList.add("active");
   const values = new FormData(form);
   console.log(values);
@@ -40,18 +39,20 @@ form.addEventListener("submit", (e) => {
     const { type, message, icon } = messages[1];
     alertInfo(type, message, icon);
     console.log("Rellena los inputs");
-  } else if (validUserName(values.get("user"))) {
-    const { type, message, icon } = messages[2];
-    alertInfo(type, message, icon);
-    console.log("usuario invalido: " + values.get("user"));
-  } else {
-    const { type, message, icon } = messages[0];
-    alertInfo(type, message, icon);
-    console.log(
-      "Datos enviados con exito: " + values.get("user"),
-      values.get("password")
-    );
+    e.preventDefault();
   }
+  //  else if (validUserName(values.get("user"))) {
+  //   const { type, message, icon } = messages[2];
+  //   alertInfo(type, message, icon);
+  //   console.log("usuario invalido: " + values.get("user"));
+  // } else {
+  //   const { type, message, icon } = messages[0];
+  //   alertInfo(type, message, icon);
+  //   console.log(
+  //     "Datos enviados con exito: " + values.get("user"),
+  //     values.get("password")
+  //   );
+  // }
   return setTimeout(() => {
     alert.classList.remove("active");
   }, 2800);

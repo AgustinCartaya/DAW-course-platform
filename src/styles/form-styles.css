@@ -155,6 +155,16 @@ select {
   border: 1px solid var(--secondary-color);
 }
 
+.btn__disabled {
+  color: black;
+  background-color: gray;
+}
+
+.btn__disabled:hover {
+  box-shadow: none;
+  border: none;
+}
+
 /*form images*/
 .container__form__image {
   position: relative;

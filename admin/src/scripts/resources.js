@@ -1,27 +1,14 @@
 $(document).ready(function () {
   const form = document.getElementById("formResources");
-<<<<<<< HEAD
-  const btnContainer = document.querySelector(".btn__container");
-  console.log(btnContainer);
-=======
->>>>>>> 0ef7dd36a1ec3815a74ef852b8c7e949c57f6722
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const formData = new FormData(form);
     // console.log(e.submitter.name);
 
-<<<<<<< HEAD
-    switch (e.target.classList[1]) {
-      case "btn__cancel ":
-        formData.append("action", "cancelResource");
-        break;
-      default:
-=======
     switch (e.submitter.name) {
       case "addResource":
         form.reset();
->>>>>>> 0ef7dd36a1ec3815a74ef852b8c7e949c57f6722
         formData.append("action", "addResource");
 
         fetch("../AJAX/AJAX-resources.php", {
@@ -32,23 +19,16 @@ $(document).ready(function () {
             return response.text();
           })
           .then(function (text) {
-<<<<<<< HEAD
-            console.log(text);
-=======
             refreshResources(text);
->>>>>>> 0ef7dd36a1ec3815a74ef852b8c7e949c57f6722
           })
           .catch(function (error) {
             console.error(error);
           });
-<<<<<<< HEAD
-=======
 
         break;
 
       case "cancelResource":
         form.reset();
->>>>>>> 0ef7dd36a1ec3815a74ef852b8c7e949c57f6722
         break;
     }
   });
