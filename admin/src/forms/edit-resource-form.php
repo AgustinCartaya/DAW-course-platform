@@ -19,12 +19,12 @@
 
                 <div class="fields">
                     <label for="resourceUrl">Name:</label>
-                    <input type="file" required name="resourceUrl" id="resourceUrl" value="<?php echo (isset($course['resourceUrl']))?$course['resourceUrl']:""; ?>">
+                    <input type="file"  name="resourceUrl" id="resourceUrl" value="<?php echo (isset($course['resourceUrl']))?$course['resourceUrl']:""; ?>">
                 </div>
 
                 <div class="fields">
                     <label for="resourceName">Name:</label>
-                    <input type="text" required name="resourceName" id="resourceName" placeholder="Title" value="<?php echo (isset($course['resourceName']))?$course['resourceName']:""; ?>">
+                    <input type="text"  name="resourceName" id="resourceName" placeholder="Title" value="<?php echo (isset($course['resourceName']))?$course['resourceName']:""; ?>">
                 </div>
                 
                 <div class="fields">
@@ -37,9 +37,9 @@
                 </div>
             </div>
             <div class="btn__container" >
-                <button type="submit" name="action" value="addResource" id="addResource" class="btn__submit btn__save btn__small">ADD</button>
-                <button type="reset" name="action" value="cancelResource" id="cancelResource" class="btn__submit btn__cancel btn__small">CANCEL</button>
-                <button type="button" disabled name="action" value="deleteResource" id="deleteResource" class="btn__submit btn__delete btn__small">DELETE</button>
+                <button type="submit" name="addResource" value="addResource" id="addResource" class="btn__submit btn__save btn__small">ADD</button>
+                <button type="submit" name="cancelResource" value="cancelResource" id="cancelResource" class="btn__submit btn__cancel btn__small">CANCEL</button>
+                <button type="submit" name="deleteResource" value="deleteResource" id="deleteResource" class="btn__submit btn__disabled btn__small">DELETE</button>
             </div>
             <input type="hidden" value="<?php echo $course['id']; ?>" name="courseId">
             </fieldset>

@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function () {
   console.log("hola");
 });
 
@@ -31,8 +31,8 @@ if (fileInputTag) {
   });
 }
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
+form.addEventListener("click", (e) => {
+  // e.preventDefault();
   alert.classList.add("active");
   const values = new FormData(form);
   if (values.get("user") == "" || values.get("password") == "") {
@@ -54,50 +54,46 @@ form.addEventListener("submit", (e) => {
     // fetch("http://localhost/DAW-project/admin/src/controllers/signin.php", {
     //     method: "POST",
     //     body: values
-     
-    // })
-      // .then((res) => res.json())
-      // .then((data) => console.log(data));
-    // }
-      fetch('http://localhost/DAW-project/admin/src/controllers/signin.php', {
-  method: 'POST',
-  body: values
-})
-.then(response => response.json())
-.catch(error => console.error('Error:', error))
-.then(response => console.log('Success:', response));
 
+    // })
+    // .then((res) => res.json())
+    // .then((data) => console.log(data));
+    // }
+    fetch("http://localhost/DAW-project/admin/src/controllers/signin.php", {
+      method: "POST",
+      body: values,
+    })
+      .then((response) => response.json())
+      .catch((error) => console.error("Error:", error))
+      .then((response) => console.log("Success:", response));
   }
 
-  
   return setTimeout(() => {
     alert.classList.remove("active");
   }, 2800);
 });
 
-
-
 // form.addEventListener("submit", (e) => {
 //   e.preventDefault();
 //   console.log("enviando");
 //   $.get( "../controllers/signin.php", { user: "admin", password: "1234" } );
-  // $.ajax({
-  //   type: "get",
-  //   url:  "../controllers/signin.php",
-  //   data:  { user: "admin", password: "1234" },
-  // });
-  // alert.classList.add("active");
-  // const values = new FormData(form);
-  // console.log(values.get("password"));
+// $.ajax({
+//   type: "get",
+//   url:  "../controllers/signin.php",
+//   data:  { user: "admin", password: "1234" },
+// });
+// alert.classList.add("active");
+// const values = new FormData(form);
+// console.log(values.get("password"));
 
-  //   fetch("./../controllers/signin.php", {
-  //     method: "POST",
-  //     body: values,
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => console.log(data));
-  
-  // return setTimeout(() => {
-  //   alert.classList.remove("active");
-  // }, 2800);
+//   fetch("./../controllers/signin.php", {
+//     method: "POST",
+//     body: values,
+//   })
+//     .then((res) => res.json())
+//     .then((data) => console.log(data));
+
+// return setTimeout(() => {
+//   alert.classList.remove("active");
+// }, 2800);
 // });

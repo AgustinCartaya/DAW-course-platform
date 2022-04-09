@@ -5,9 +5,7 @@ if ( ! defined( 'APP_ROOT' ) ) {
 
 include_once(APP_FUNCTIONS."/db-course-CRUD.php");
 if($_POST){
-    echo "tofo bien";
     $action=(isset($_POST['action']))?$_POST['action']:"";
-    echo "tofo bien2";
     switch($action){
         case 'addResource':
             $resourceUrl=(isset($_FILES['resourceUrl']['name']))?$_FILES['resourceUrl']['name']:NULL;
@@ -16,5 +14,4 @@ if($_POST){
             echo json_encode($resources);
             break;
     }
-    
 }
