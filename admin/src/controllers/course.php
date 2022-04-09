@@ -1,7 +1,9 @@
 <?php include("../templates/header.php"); ?>
 <?php 
 //update course
+// print_r($_REQUEST);
 include_once(APP_FUNCTIONS."/db-course-CRUD.php");
+include_once("../AJAX/AJAX-resources.php");
 if($_POST){//cuando terminamos de editar el curso lo guardamos en la db (posiblemente esto no va aqui)
 
     $action=(isset($_POST['action']))?$_POST['action']:"";
@@ -35,12 +37,19 @@ if($_POST){//cuando terminamos de editar el curso lo guardamos en la db (posible
             deleteImage($_POST['courseThumbnail_res']);
             deleteCourse($_POST['courseId']);
             header("Location:courses.php");
+            echo "Mamal************/******** DANIEL MARICA<br/>/<br/>o";
+ 
             break;    
 
-        // case "addResource":
-        //     createResource($_POST['courseId'], $_POST['resourceName'], $_POST['resourceType'], $_POST['resourceUrl']);
-        //     // header("Location:course.php?courseId=$_POST['courseId']");
-        //     break;  
+        case "addResource":
+            // $resources=getCourseResources("8");
+            // echo json_encode($resources);
+            // print_r($resources);
+            // createResource($_POST['courseId'], $_POST['resourceName'], $_POST['resourceType'], $_POST['resourceUrl']);
+            // header("Location:courses.php");
+            // echo "Mamal************/******** DANIEL MARICA<br/>/<br/>o";
+            // si devuelve la broma!!!!!
+            break;  
     }
 }
 //show course information to edit

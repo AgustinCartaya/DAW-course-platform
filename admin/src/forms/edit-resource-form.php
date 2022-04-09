@@ -2,11 +2,11 @@
 <div class="alert"></div>
 <div class="body__container__form">
   <div class="container__form">
-    <form class="form__data" method="POST" enctype="multipart/form-data">
+    <form class="form__data" id="formResources" enctype="multipart/form-data">
         <fieldset>
             <legend>Add resource</legend>
             <div class="data__fields">
-                <div class="container__form__image"> 
+                <!-- <div class="container__form__image"> 
                     <img
                         src="<?php echo defaultImage('resource');?>"
                         class="image__avatar image__square"
@@ -15,7 +15,13 @@
                     <label for="image__input" class="image__label image__square">
                         Choose Resource
                     </label>
+                </div> -->
+
+                <div class="fields">
+                    <label for="resourceUrl">Name:</label>
+                    <input type="file" required name="resourceUrl" id="resourceUrl" value="<?php echo (isset($course['resourceUrl']))?$course['resourceUrl']:""; ?>">
                 </div>
+
                 <div class="fields">
                     <label for="resourceName">Name:</label>
                     <input type="text" required name="resourceName" id="resourceName" placeholder="Title" value="<?php echo (isset($course['resourceName']))?$course['resourceName']:""; ?>">
@@ -31,7 +37,7 @@
                 </div>
             </div>
             <div class="btn__container" >
-                <button type="button" name="action" value="addResource" id="addResource" class="btn__submit btn__save btn__small">ADD</button>
+                <button type="submit" name="action" value="addResource" id="addResource" class="btn__submit btn__save btn__small">ADD</button>
                 <button type="reset" name="action" value="cancelResource" id="cancelResource" class="btn__submit btn__cancel btn__small">CANCEL</button>
                 <button type="button" disabled name="action" value="deleteResource" id="deleteResource" class="btn__submit btn__delete btn__small">DELETE</button>
             </div>
