@@ -12,7 +12,7 @@
                 <div id="resourcesCardsContainer" class="cards__container resource__card__list">  
                     <?php foreach($resources as $resource){ ?>
                     <div class="card__item">
-                        <button>
+                        <button class="btttt">
                             <img
                             src= "<?php echo defaultResourcePreview($resource['type']);?>"
                             alt=""
