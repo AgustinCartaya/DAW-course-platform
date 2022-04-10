@@ -5,9 +5,9 @@
       <fieldset>
         <legend>Sign up for admin</legend>
         <div class="data__fields">
-          <?php if(isset($messageError)){?>
-            <p> <?php echo $messageError; ?></p>
-          <?php } ?>
+        <?php if(isset($messageError)){?>
+          <p class="php__form__error"> <?php echo $messageError; ?></p>
+        <?php } ?>
           <div class="fields">
               <label for="user">User</label>
               <input type="text" name="user" id="user" placeholder="Enter user name">     
@@ -25,7 +25,7 @@
 
           <a class="btn__link" href="signin.php">Sign in</a>
         </div>
-        <button type="submit" class="btn__submit btn__unique" id="submit" >Sign up</button>
+        <button type="submit" class="btn__submit btn__unique" >Sign up</button>
       </fieldset>
     </form>
   </div>

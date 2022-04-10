@@ -6,7 +6,7 @@
                 <legend>Login for admin</legend>
                 <div class="data__fields">
                     <?php if(isset($messageError)){?>
-                    <p> <?php echo $messageError; ?></p>
+                    <p class="php__form__error"> <?php echo $messageError; ?></p>
                     <?php } ?>
                     <div class="fields">
                         <label for="user">User</label>

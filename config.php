@@ -25,6 +25,20 @@ define( 'W_IMG_PDF', 'pdf.png' );
 define( 'W_IMG_IMAGE', 'image.png' );
 define( 'W_IMG_VIDEO', 'video.png' );
 
+/** words */
+define( 'WORD_PDF', 'pdf' );
+define( 'WORD_IMAGE', 'image' );
+define( 'WORD_VIDEO', 'video' );
+define( 'WORD_STUDENT', 'student' );
+define( 'WORD_COURSE', 'course' );
+define( 'WORD_RESOURCE', 'resource' );
+
+define( 'WORD_PLAIN_TEXT', 'plain text' );
+define( 'WORD_TEXT', 'text' );
+define( 'WORD_USER_NAME', 'user name' );
+define( 'WORD_PASSWORD', 'password' );
+define( 'WORD_EMAIL', 'email' );
+
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */

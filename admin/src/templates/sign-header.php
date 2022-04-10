@@ -5,6 +5,7 @@ if ( ! defined( 'APP_ROOT' ) ) {
 }
 include_once(APP_ADMIN."/admin-config.php");
 include_once(APP_FUNCTIONS."/db-admin-CRUD.php");
+include_once(APP_FUNCTIONS."/util.php");
 
 session_start();
 

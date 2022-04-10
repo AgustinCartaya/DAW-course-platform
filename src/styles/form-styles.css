@@ -33,6 +33,10 @@
   color: #e34747;
 }
 
+.php__form__error {
+  color: #e34747;
+}
+
 .success {
   color: #43a854;
 }

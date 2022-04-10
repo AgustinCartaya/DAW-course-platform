@@ -10,22 +10,36 @@ if($_POST){//cuando terminamos de editar el curso lo guardamos en la db (posible
 
     switch($action){
         case "save":
-            include("../functions/util.php");
-            $courseImageName=(isset($_FILES['courseThumbnail']['name']))?$_FILES['courseThumbnail']['name']:"";
-            $courseImageTemp=(isset($_FILES['courseThumbnail']['tmp_name']))?$_FILES['courseThumbnail']['tmp_name']:"";
-            $courseImage = makeImageCopy($courseImageName, $courseImageTemp, "");
-            if(empty($courseImage))
-                $courseImage=$_POST['courseThumbnail_res'];
-            else
-                deleteImage($_POST['courseThumbnail_res']);
+
+            if( !validString( $_POST['courseTitle'],WORD_TEXT) )
+            $messageError='Error: No valid Title';
+        
+            else if( !validString( $_POST['courseType'],WORD_PLAIN_TEXT) )
+                $messageError='Error: No valid Type';
             
-            updateCourse($_POST['courseId'],
-                        $_POST['courseTitle'], 
-                        $_POST['courseType'], 
-                        $_POST['courseLevel'], 
-                        $_POST['courseDescription'], 
-                        $courseImage);
-            header("Location:courses.php");
+            else if( !validString( $_POST['courseDescription'],WORD_TEXT) )
+                $messageError='Error: No valid description';
+
+            else
+            {
+
+                include("../functions/util.php");
+                $courseImageName=(isset($_FILES['courseThumbnail']['name']))?$_FILES['courseThumbnail']['name']:"";
+                $courseImageTemp=(isset($_FILES['courseThumbnail']['tmp_name']))?$_FILES['courseThumbnail']['tmp_name']:"";
+                $courseImage = makeImageCopy($courseImageName, $courseImageTemp, "");
+                if(empty($courseImage))
+                    $courseImage=$_POST['courseThumbnail_res'];
+                else
+                    deleteImage($_POST['courseThumbnail_res']);
+                
+                updateCourse($_POST['courseId'],
+                            $_POST['courseTitle'], 
+                            $_POST['courseType'], 
+                            $_POST['courseLevel'], 
+                            $_POST['courseDescription'], 
+                            $courseImage);
+                header("Location:courses.php");
+            }
             break;
 
         case "cancel":
@@ -36,25 +50,13 @@ if($_POST){//cuando terminamos de editar el curso lo guardamos en la db (posible
             include("../functions/util.php");
             deleteImage($_POST['courseThumbnail_res']);
             deleteCourse($_POST['courseId']);
-            header("Location:courses.php");
-            echo "Mamal************/******** DANIEL MARICA<br/>/<br/>o";
- 
+            header("Location:courses.php"); 
             break;    
-
-        case "addResource":
-            // $resources=getCourseResources("8");
-            // echo json_encode($resources);
-            // print_r($resources);
-            // createResource($_POST['courseId'], $_POST['resourceName'], $_POST['resourceType'], $_POST['resourceUrl']);
-            // header("Location:courses.php");
-            // echo "Mamal************/******** DANIEL MARICA<br/>/<br/>o";
-            // si devuelve la broma!!!!!
-            break;  
     }
 }
 //show course information to edit
-else if($_GET){
-    $courseId=$_GET['courseId'];
+if($_REQUEST){
+    $courseId=$_REQUEST['courseId'];
 
     //cours information
     $course=getCourseById($courseId);

@@ -5,19 +5,30 @@
     $courses=getAdminCourses($userId);
 
     if($_POST){
-        //save the image in the website
-        include("../functions/util.php");
-        $courseImageName=(isset($_FILES['courseThumbnail']['name']))?$_FILES['courseThumbnail']['name']:"";
-        $courseImageTemp=(isset($_FILES['courseThumbnail']['tmp_name']))?$_FILES['courseThumbnail']['tmp_name']:"";
-        $courseImage = makeImageCopy($courseImageName, $courseImageTemp, "");
+        if( !validString( $_POST['courseTitle'],WORD_TEXT) )
+            $messageError='Error: No valid Title';
+        
+        else if( !validString( $_POST['courseType'],WORD_PLAIN_TEXT) )
+            $messageError='Error: No valid Type';
+        
+        else if( !validString( $_POST['courseDescription'],WORD_TEXT) )
+            $messageError='Error: No valid description';
 
-        createCourse($userId,
-                    $_POST['courseTitle'], 
-                    $_POST['courseType'], 
-                    $_POST['courseLevel'], 
-                    $_POST['courseDescription'], 
-                    $courseImage);
-        header("Location:courses.php");
+        else
+        {
+            include("../functions/util.php");
+            $courseImageName=(isset($_FILES['courseThumbnail']['name']))?$_FILES['courseThumbnail']['name']:"";
+            $courseImageTemp=(isset($_FILES['courseThumbnail']['tmp_name']))?$_FILES['courseThumbnail']['tmp_name']:"";
+            $courseImage = makeImageCopy($courseImageName, $courseImageTemp, "");
+
+            createCourse($userId,
+                        $_POST['courseTitle'], 
+                        $_POST['courseType'], 
+                        $_POST['courseLevel'], 
+                        $_POST['courseDescription'], 
+                        $courseImage);
+            header("Location:courses.php");
+        }
     }
 ?>
 

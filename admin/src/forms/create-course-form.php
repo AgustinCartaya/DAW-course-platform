@@ -5,6 +5,10 @@
             <fieldset>
                 <legend>Create new course</legend>
                 <div class="data__fields">
+                    <?php if(isset($messageError)){?>
+                        <p class="php__form__error"> <?php echo $messageError; ?></p>
+                    <?php } ?>                    
+                    
                     <div class="form__divided">
                         <div class="data__left__side">
                             <div class="container__form__image">

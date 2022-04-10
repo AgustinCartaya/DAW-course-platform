@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  addResourceCardsAction();
   const form = document.getElementById("formResources");
 
   form.addEventListener("submit", async (e) => {
@@ -34,6 +35,32 @@ $(document).ready(function () {
   });
 });
 
+// function addResourceCardsAction() {
+//   const cardsContainer = $("#resourcesCardsContainer");
+//   for (let i = 0; i < cardsContainer.children().length; i++) {
+//     console.log(cardsContainer.children()[i]);
+//   }
+//   // console.log(cardsContainer.children[0]);
+
+//   // cardsContainer.addEventListener("click", (e) => {
+//   //   console.log(e.target);
+//   // });
+// }
+
+function addResourceCardsAction() {
+  let name = $("resourceName");
+  let url = $("resourceUrl");
+  let type = $("resourceType");
+  const cardsContainer = document.getElementById("resourcesCardsContainer");
+  $(".btttt").click((e) => {
+    console.log(e);
+    // event.target.firstChild.children[1];
+    console.log(e.target.querySelector("p"));
+    // console.log(e.target.firstChild.children[1]);
+    // console.log(e.tagret.querySelector("p"));
+  });
+}
+
 function getResourceDefaultImage(type) {
   switch (type.toLowerCase()) {
     case "pdf":
@@ -60,7 +87,7 @@ function refreshResources(data) {
   data.map((ele) => {
     console.log(ele);
     cards += `<div class='card__item'>
-                    <button>
+                    <button type="click">
                       <img
                         src="${getResourceDefaultImage(ele.type)}"
                         alt="Image"
@@ -72,4 +99,5 @@ function refreshResources(data) {
   });
   console.log(cards);
   resourcesCardsContainer.innerHTML = cards;
+  addResourceCardsAction();
 }
