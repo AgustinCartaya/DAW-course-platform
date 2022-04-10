@@ -37,7 +37,6 @@ const allInputTagValues = () => {
   for (let i = 0; i < allInputTags.length; i++) {
     values.push(allInputTags[i].value);
   }
-  console.log(values);
   return values;
 };
 

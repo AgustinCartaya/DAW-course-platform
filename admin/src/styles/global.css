@@ -1,8 +1,9 @@
 /* ------ Courses page ------ */
-.courses__container__divided {
+.container__divided {
   display: grid;
-  grid-template-columns: 35% auto;
+  grid-template-columns: 0.6fr auto;
   grid-template-rows: 1fr;
+  column-gap: 1rem;
 }
 
 /* .courses__container__divided > .container__right  {

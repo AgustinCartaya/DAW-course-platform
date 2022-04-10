@@ -1,17 +1,17 @@
-$(document).ready(function () {
-  console.log("hola");
-});
+$(document).ready(function () {});
 
 import {
   alert,
-  allInputTags,
   fileInputTag,
   thumbnail,
   form,
   messages,
 } from "./data/variables.js";
-import { validUserName } from "./functions/FormValidation.js";
 import alertInfo from "./functions/alertInfo.js";
+import {
+  fillThisInputError,
+  desactiveInputError,
+} from "./functions/outlineErrors.js";
 
 if (fileInputTag) {
   fileInputTag.addEventListener("change", (e) => {
@@ -31,29 +31,21 @@ if (fileInputTag) {
   });
 }
 
-form.addEventListener("submit", (e) => {
-  alert.classList.add("active");
-  const values = new FormData(form);
-  console.log(values);
-  if (values.get("user") == "" || values.get("password") == "") {
-    const { type, message, icon } = messages[1];
-    alertInfo(type, message, icon);
-    console.log("Rellena los inputs");
-    e.preventDefault();
-  }
-  //  else if (validUserName(values.get("user"))) {
-  //   const { type, message, icon } = messages[2];
-  //   alertInfo(type, message, icon);
-  //   console.log("usuario invalido: " + values.get("user"));
-  // } else {
-  //   const { type, message, icon } = messages[0];
-  //   alertInfo(type, message, icon);
-  //   console.log(
-  //     "Datos enviados con exito: " + values.get("user"),
-  //     values.get("password")
-  //   );
-  // }
-  return setTimeout(() => {
-    alert.classList.remove("active");
-  }, 2800);
-});
+if (form) {
+  form.addEventListener("submit", (e) => {
+    alert.classList.add("active");
+    const values = new FormData(form);
+
+    if (values.get("user") == "" || values.get("password") == "") {
+      e.preventDefault();
+      const { type, message, icon } = messages[1];
+      fillThisInputError();
+      alertInfo(type, message, icon);
+    }
+
+    return setTimeout(() => {
+      alert.classList.remove("active");
+      desactiveInputError();
+    }, 2800);
+  });
+}

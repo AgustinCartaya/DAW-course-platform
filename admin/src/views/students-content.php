@@ -1,12 +1,12 @@
-<div class="students__container__divided">
-    <div class="container__up">
+<div class="container__divided">
+    <div class="container__left">
         <?php include("../forms/create-student-form.php"); ?>
     </div>
 
-    <div class="container__bottom">
+    <div class="container__right">
         <div class="cards__container student__card__list">
             <?php foreach($students as $student){ ?>
-                <?php include("../templates/student-preview-card.php"); ?>
+            <?php include("../templates/student-preview-card.php"); ?>
             <?php } ?>
         </div>
     </div>
