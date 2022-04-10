@@ -1,7 +1,7 @@
 /* ------ Courses page ------ */
 .container__divided {
   display: grid;
-  grid-template-columns: 0.6fr auto;
+  grid-template-columns: 0.6fr 1fr;
   grid-template-rows: 1fr;
   column-gap: 1rem;
 }
@@ -13,9 +13,8 @@
 
 /*Courses cards*/
 .course__card__list {
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto;
-  padding: 20px 0px 0px 40px;
+  padding: 20px 0 0 0;
+  grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
 }
 
 /* ------ Students page ------ */
@@ -35,8 +34,11 @@
 
 /*Student cards*/
 .student__card__list {
-  grid-template-columns: repeat(10, 1fr);
+  height: 100%;
+  padding: 20px 0 0 0;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
   grid-template-rows: auto;
+  scroll-behavior: auto;
 }
 
 /* ------ Edit student page ------ */

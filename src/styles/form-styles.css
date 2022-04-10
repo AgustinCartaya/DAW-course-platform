@@ -220,7 +220,6 @@ select {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 0 10px 0 0;
 }
 
 .image__avatar {
@@ -258,14 +257,15 @@ select {
   grid-template-columns: 0.5fr auto;
   grid-template-rows: 1fr;
   border-radius: 4px;
+  column-gap: 10px;
 }
 
 /* divided fields */
 .fields__divided {
   display: grid;
-  grid-template-columns: 50% auto;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-  column-gap: 1rem;
+  column-gap: 10px;
 }
 
 .fields__end {
