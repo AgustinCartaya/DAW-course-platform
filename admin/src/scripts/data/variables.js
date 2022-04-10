@@ -3,7 +3,7 @@ const form = document.getElementById("form");
 const allInputTags = document.querySelectorAll("input");
 const fileInputTag = document.getElementById("image__input");
 const thumbnail = document.querySelector(".image__avatar");
-
+const btn = document.querySelector("button");
 const messages = [
   {
     type: "success",
@@ -48,4 +48,5 @@ export {
   allInputTagValues,
   form,
   messages,
+  btn,
 };

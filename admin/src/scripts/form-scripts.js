@@ -6,6 +6,7 @@ import {
   thumbnail,
   form,
   messages,
+  btn,
 } from "./data/variables.js";
 import alertInfo from "./functions/alertInfo.js";
 import {
@@ -31,11 +32,61 @@ if (fileInputTag) {
   });
 }
 
-if (form) {
+if (btn.value == "createCourse") {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    alert.classList.add("active");
+    const values = new FormData(form);
+    console.log(values.get("courseLevel"));
+    if (values.get("courseTitle") == "" || values.get("courseType") == "") {
+      e.preventDefault();
+      const { type, message, icon } = messages[1];
+      fillThisInputError();
+      alertInfo(type, message, icon);
+    } else {
+      const { type, message, icon } = messages[0];
+      alertInfo(type, message, icon);
+    }
+    return setTimeout(() => {
+      alert.classList.remove("active");
+      desactiveInputError();
+    }, 2500);
+  });
+}
+
+if (btn.value == "createStudent") {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    alert.classList.add("active");
+    const values = new FormData(form);
+    console.log(values.get("courseLevel"));
+    if (
+      values.get("studentInterest") == "" ||
+      values.get("studentName") == "" ||
+      values.get("studentLastName") == "" ||
+      values.get("studentDateOfBirth") == "" ||
+      values.get("studentPassword") == "" ||
+      values.get("studentRepeatPassword") == ""
+    ) {
+      e.preventDefault();
+      const { type, message, icon } = messages[1];
+      fillThisInputError();
+      alertInfo(type, message, icon);
+    } else {
+      const { type, message, icon } = messages[0];
+      alertInfo(type, message, icon);
+    }
+    return setTimeout(() => {
+      alert.classList.remove("active");
+      desactiveInputError();
+    }, 2500);
+  });
+}
+
+if (btn.value == "signin") {
   form.addEventListener("submit", (e) => {
     alert.classList.add("active");
     const values = new FormData(form);
-
     if (values.get("user") == "" || values.get("password") == "") {
       e.preventDefault();
       const { type, message, icon } = messages[1];
@@ -46,6 +97,6 @@ if (form) {
     return setTimeout(() => {
       alert.classList.remove("active");
       desactiveInputError();
-    }, 2800);
+    }, 2500);
   });
 }

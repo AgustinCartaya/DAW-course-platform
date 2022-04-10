@@ -2,7 +2,6 @@ import { allInputTagValues, allInputTags } from "../data/variables.js";
 
 const desactiveInputError = () => {
   const inputValues = allInputTagValues();
-  console.log(inputValues);
   inputValues.map((ele, i) => {
     if (ele === "") {
       allInputTags[i].classList.remove("bounce");

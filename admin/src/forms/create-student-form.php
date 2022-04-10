@@ -1,22 +1,20 @@
 <div class="alert"></div>
 <div class="body__container__form">
     <div class="container__form">
-        <form class="form__data" method="POST" enctype="multipart/form-data">
+        <form class="form__data" id="form" method="POST" enctype="multipart/form-data" autocomplete="off">
             <fieldset>
                 <legend>Create new student</legend>
                 <div class="data__fields">
-                <?php if(isset($messageError)){?>
-                        <p class="php__form__error"> <?php echo $messageError; ?></p>
-                <?php } ?>    
-                <!-- parent container created (some css of app__image put on paretnt container) -->
-                    <div class="form__divided">  
-                        <div class="data__left__side"> 
-                            <div class="container__form__image"> 
-                                <img
-                                    src="<?php echo defaultImage('student');?>"
-                                    class="image__avatar image__circle"
-                                />
-                                <input type="file" class="image__input" id="image__input" name="studentImage" accept="image/*" />
+                    <?php if(isset($messageError)){?>
+                    <p class="php__form__error"> <?php echo $messageError; ?></p>
+                    <?php } ?>
+                    <!-- parent container created (some css of app__image put on paretnt container) -->
+                    <div class="form__divided">
+                        <div class="data__left__side">
+                            <div class="container__form__image">
+                                <img src="<?php echo defaultImage('student');?>" class="image__avatar image__circle" />
+                                <input type="file" class="image__input" id="image__input" name="studentImage"
+                                    accept="image/*" />
                                 <label for="image__input" class="image__label image__circle">
                                     Choose Photo
                                 </label>
@@ -40,7 +38,7 @@
                                 </div>
                             </div>
                         </div>
-                            <!-- changed class name: app__right-side -->
+                        <!-- changed class name: app__right-side -->
                         <div class="data__right__side__student">
                             <div class="fields__divided">
                                 <div class="fields">
@@ -88,7 +86,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="btn__submit btn__unique" id="submit" type="submit">CREATE</button>
+                <button class="btn__submit btn__unique" type="submit" value="createStudent">CREATE</button>
             </fieldset>
         </form>
     </div>

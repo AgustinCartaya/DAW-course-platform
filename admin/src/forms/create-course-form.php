@@ -1,14 +1,14 @@
 <div class="alert"></div>
 <div class="body__container__form">
     <div class="container__form">
-        <form class="form__data" action="" method="POST" enctype="multipart/form-data">
+        <form class="form__data" action="" method="POST" enctype="multipart/form-data" id="form">
             <fieldset>
                 <legend>Create new course</legend>
                 <div class="data__fields">
                     <?php if(isset($messageError)){?>
-                        <p class="php__form__error"> <?php echo $messageError; ?></p>
-                    <?php } ?>                    
-                    
+                    <p class="php__form__error"> <?php echo $messageError; ?></p>
+                    <?php } ?>
+
                     <div class="form__divided">
                         <div class="data__left__side">
                             <div class="container__form__image">
@@ -23,12 +23,12 @@
                         <div class="data__right__side">
                             <div class="fields">
                                 <label for="courseTitle">Title</label>
-                                <input type="text" required name="courseTitle" id="courseTitle" placeholder="Title">
+                                <input type="text" name="courseTitle" id="courseTitle" placeholder="Title">
                             </div>
 
                             <div class="fields">
                                 <label for="courseType">Type</label>
-                                <input type="text" required name="courseType" id="courseType" placeholder="Type">
+                                <input type="text" name="courseType" id="courseType" placeholder="Type">
                             </div>
 
                             <div class="fields">
@@ -41,10 +41,10 @@
                             </div>
                         </div>
                     </div>
-                    <textarea placeholder="Description..." name="courseDescription" required id="courseDescription"
-                        cols="30" rows="10"></textarea>
+                    <textarea placeholder="Description..." name="courseDescription" id="courseDescription" cols="30"
+                        rows="10"></textarea>
                 </div>
-                <button class="btn__submit btn__unique" id="submit" type="btn">CREATE</button>
+                <button class="btn__submit btn__unique" type="submit" value="createCourse">CREATE</button>
             </fieldset>
         </form>
     </div>
