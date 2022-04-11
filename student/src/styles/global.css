@@ -40,6 +40,8 @@
 
 /* ------ Edit student page ------ */
 .student__edit__container {
+  display: grid;
+  justify-items: center;
   padding: 0 10%;
 }
 

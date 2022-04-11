@@ -44,26 +44,35 @@
 /* ------ Edit student page ------ */
 .student__edit__container {
   padding: 0 10%;
+  display: grid;
+  justify-items: center;
 }
 
 /* ------ Edit course page ------ */
 .course__body__container__divided {
   display: grid;
   grid-template-rows: 1fr auto;
+  justify-items: center;
 }
 
 .course__container__up {
   padding: 0 15%;
 }
 
+.course__container__bottom {
+  width: 100%;
+}
+
 .resource__container__divided {
   display: grid;
-  grid-template-columns: 30% auto;
+  grid-template-columns: 0.5fr 1fr;
+  column-gap: 1rem;
 }
 
 /*Resource cards*/
 .resource__card__list {
-  grid-template-columns: repeat(5, 1fr);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
   grid-template-rows: auto;
-  margin: 15px 0px 0px 50px;
+  margin: 15px 0 0 0;
 }

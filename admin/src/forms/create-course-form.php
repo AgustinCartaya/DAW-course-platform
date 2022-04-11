@@ -44,7 +44,9 @@
                     <textarea placeholder="Description..." name="courseDescription" id="courseDescription" cols="30"
                         rows="10"></textarea>
                 </div>
-                <button class="btn__submit btn__unique" type="submit" value="createCourse">CREATE</button>
+                <div class="btn__container"><button class="btn__submit btn__unique" type="submit"
+                        value="createCourse">CREATE</button></div>
+
             </fieldset>
         </form>
     </div>

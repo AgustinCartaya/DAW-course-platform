@@ -5,7 +5,8 @@ body {
 
 .body__container__form {
   display: grid;
-  place-items: center;
+  justify-content: center;
+  align-items: center;
   height: 100%;
 }
 

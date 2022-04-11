@@ -19,7 +19,6 @@
                                     Choose Photo
                                 </label>
                             </div>
-
                             <!-- fill with the DB or with a JSON file -->
                             <div class="fields__end">
                                 <div class="fields">
@@ -86,7 +85,8 @@
                         </div>
                     </div>
                 </div>
-                <button class="btn__submit btn__unique" type="submit" value="createStudent">CREATE</button>
+                <div class="btn__container"> <button class="btn__submit btn__unique" type="submit"
+                        value="createStudent">CREATE</button></div>
             </fieldset>
         </form>
     </div>

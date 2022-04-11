@@ -18,7 +18,9 @@
                     </div>
                     <a class="btn__link" href="signup.php">Sign up</a>
                 </div>
-                <button class="btn__submit btn__unique" type="submit" value="signin">Sign In</button>
+                <div class="btn__container"> <button class="btn__submit btn__unique" type="submit" value="signin">Sign
+                        In</button></div>
+
             </fieldset>
         </form>
     </div>
