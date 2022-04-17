@@ -13,5 +13,11 @@ if($_POST){
             $resources=getCourseResources($_POST['courseId']);
             echo json_encode($resources);
             break;
+
+        case 'deleteResource':
+            deleteResource($_POST['resourceId']);
+            $resources=getCourseResources($_POST['courseId']);
+            echo json_encode($resources);
+            break;
     }
 }

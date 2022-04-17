@@ -3,10 +3,10 @@
     <div class="container__form">
         <form class="form__data" id="formResources" enctype="multipart/form-data">
             <fieldset>
-                <legend>Add resource</legend>
+                <legend id="legendFormResource">Add resource</legend>
                 <div class="data__fields">
                     <div class="fields">
-                        <label for="resourceUrl" >Source:</label>
+                        <label id="labelSrc" for="resourceUrl" >Source:</label>
                         <input type="file" name="resourceUrl" id="resourceUrl" value="dddp.txt">
                     </div>
 
@@ -31,9 +31,10 @@
                     <button type="submit" name="cancelResource" value="cancelResource" id="cancelResource"
                         class="btn__submit btn__cancel btn__small">CANCEL</button>
                     <button type="submit" name="deleteResource" value="deleteResource" id="deleteResource"
-                        class="btn__submit btn__disabled btn__small">DELETE</button>
+                        class="btn__submit btn__disabled btn__small" disabled>DELETE</button>
                 </div>
-                <input type="hidden" value="<?php echo $course['id']; ?>" name="courseId">
+                <input type="hidden" value="<?php echo $course['id']; ?>" name="courseId" />
+                <input id="resourceId" type="hidden" name="resourceId" />
             </fieldset>
         </form>
     </div>

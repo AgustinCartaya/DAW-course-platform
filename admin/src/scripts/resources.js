@@ -5,10 +5,9 @@ $(document).ready(function () {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const formData = new FormData(form);
-
+    form.reset();
     switch (e.submitter.name) {
       case "addResource":
-        form.reset();
         formData.append("action", "addResource");
 
         fetch("../AJAX/AJAX-resources.php", {
@@ -27,9 +26,25 @@ $(document).ready(function () {
 
         break;
 
+      case "deleteResource":
+        formData.append("action", "deleteResource");
+        fetch("../AJAX/AJAX-resources.php", {
+          method: "post",
+          body: formData,
+        })
+          .then(function (response) {
+            return response.text();
+          })
+          .then(function (text) {
+            refreshResources(text);
+          })
+          .catch(function (error) {
+            console.error(error);
+          });
+        break;
+
       case "cancelResource":
-        form.reset();
-        changeChangeResourceFromButtons(true);
+        changeResourceFromButtons(false);
         break;
     }
   });
@@ -43,38 +58,48 @@ function addResourceCardsAction() {
       const obj = {
         content: node.querySelector("p").textContent,
         type: node.querySelector("span").textContent,
-        url: node.querySelector("input").value,
+        url: node.querySelector("input[name='resourceUrl']").value,
+        id: node.querySelector("input[name='resourceId']").value,
       };
 
       // setting values
       const resourceName = document.getElementById("resourceName");
-      const resourceUrl = document.getElementById("resourceUrl");
       const resourceType = document.getElementById("resourceType");
-      console.log(obj);
+      const resourceId = document.getElementById("resourceId");
+      const labelSrc = document.getElementById("labelSrc");
 
       resourceName.value = obj.content;
       // resourceUrl.value = obj.url;
       resourceType.value = obj.type;
-
+      resourceId.value = obj.id;
+      labelSrc.textContent += " " + obj.url;
       //modify buttons
-      changeChangeResourceFromButtons(true);
+      changeResourceFromButtons(true);
     }
   });
 }
 
-function changeChangeResourceFromButtons(ch) {
+function changeResourceFromButtons(ch) {
   const btnAddResource = document.getElementById("addResource");
   const btnDeleteResource = document.getElementById("deleteResource");
+  const legendFormResource = document.getElementById("legendFormResource");
+  const resourceId = document.getElementById("resourceId").value;
 
   if (ch) {
     btnAddResource.text = "SAVE";
     btnAddResource.value = "editResource";
     btnDeleteResource.disabled = false;
-    console.log("FALSE");
+    btnDeleteResource.classList.remove("btn__disabled");
+    btnDeleteResource.classList.add("btn__delete");
+    legendFormResource.textContent = "Edit resorce #" + resourceId;
   } else {
     btnAddResource.text = "ADD";
     btnAddResource.value = "addResource";
     btnDeleteResource.disabled = true;
+    btnDeleteResource.classList.remove("btn__delete");
+    btnDeleteResource.classList.add("btn__disabled");
+    legendFormResource.textContent = "Add resorce";
+    document.getElementById("labelSrc").textContent = "Source:";
   }
 }
 
@@ -104,17 +129,21 @@ function refreshResources(data) {
   data.map((ele) => {
     console.log(ele);
     cards += `<div class='card__item'>
-                    <button type="click">
+                    <button>
                       <img
                         src="${getResourceDefaultImage(ele.type)}"
                         alt="Image"
                         />
                         <span>${ele.type}</span>
                         <p>${ele.name}</p>
-                      </button>
+                        <input type="hidden" name="resourceUrl" value="${
+                          ele.url
+                        }"/>
+                        <input type="hidden" name="resourceId" value="${
+                          ele.id
+                        }" />
+                    </button>
                   </div>`;
   });
-  console.log(cards);
   resourcesCardsContainer.innerHTML = cards;
-  addResourceCardsAction();
 }
