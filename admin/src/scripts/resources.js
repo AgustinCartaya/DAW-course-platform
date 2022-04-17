@@ -67,7 +67,8 @@ function addResourceCardsAction() {
       // resourceUrl.value = obj.url;
       resourceType.value = obj.type;
       resourceId.value = obj.id;
-      labelSrc.textContent = obj.url;
+      labelSrc.textContent = `Source: ${obj.url}`;
+      labelSrc.setAttribute("for", "");
       //modify buttons
       changeResourceFrom(true);
     }
