@@ -3,9 +3,9 @@
 <?php
     //getting all student courses from db
 
-    include_once("../functions/db-student-course-CRUD.php");
+    include_once(APP_FUNCTIONS."/db-student-course-CRUD.php");
     echo "<h1 style='color:white;'> Recommended Courses </h1>";
-    $courses=getRecommendedCourses($interest,$userId);
+    $courses=getRecommendedCourses($interest);
 
     $Fcourses=getFollowedCourses($userId);
 

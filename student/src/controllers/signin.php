@@ -14,11 +14,11 @@ if($_POST){
         $_SESSION['studentVerification']="ok";
         $_SESSION['user']=$user;
         $_SESSION['userId']=$student["id"];
-        $_SESSION['choix']=$student["interest"];
+        $_SESSION['interest']=$student["interest"];
         header('Location:home.php');
     }else{
         $messageError="Error: user name or password are incorrects";
-        
+
     }
 }
 ?>

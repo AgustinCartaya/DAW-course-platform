@@ -54,4 +54,3 @@ function deleteStudent($id){
     $query->bindParam(':id', $id);
     $query->execute();
 }
-

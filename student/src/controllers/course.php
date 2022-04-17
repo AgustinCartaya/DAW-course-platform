@@ -1,5 +1,5 @@
 <?php include("../templates/header.php"); ?>
-<?php 
+<?php
 //update course
 include_once(APP_FUNCTIONS."/db-course-CRUD.php");
 if($_POST){//cuando terminamos de editar el curso lo guardamos en la db (posiblemente esto no va aqui)
@@ -16,26 +16,26 @@ if($_POST){//cuando terminamos de editar el curso lo guardamos en la db (posible
                 $courseImage=$_POST['courseThumbnail_res'];
             else
                 deleteImage($_POST['courseThumbnail_res']);
-            
+
             updateCourse($_POST['courseId'],
-                        $_POST['courseTitle'], 
-                        $_POST['courseType'], 
-                        $_POST['courseLevel'], 
-                        $_POST['courseDescription'], 
+                        $_POST['courseTitle'],
+                        $_POST['courseType'],
+                        $_POST['courseLevel'],
+                        $_POST['courseDescription'],
                         $courseImage);
             header("Location:courses.php");
             break;
 
         case "cancel":
             header("Location:courses.php");
-            break;    
+            break;
 
         case "delete":
             include("../functions/util.php");
             deleteImage($_POST['courseThumbnail_res']);
             deleteCourse($_POST['courseId']);
             header("Location:courses.php");
-            break;    
+            break;
 
         case "addResource":
             echo $_POST['courseId'];
@@ -43,7 +43,7 @@ if($_POST){//cuando terminamos de editar el curso lo guardamos en la db (posible
             echo $_POST['resourceType'];
             echo $_POST['resourceUrl'];
             createResource($_POST['courseId'], $_POST['resourceName'], $_POST['resourceType'], $_POST['resourceUrl']);
-            break;  
+            break;
     }
 }
 //show course information to edit
@@ -58,7 +58,7 @@ else if($_GET){
 
     if(isset($course)){
         include("../views/course-edition.php");
-    } 
+    }
 }
 ?>
 <?php include("../templates/footer.php"); ?>

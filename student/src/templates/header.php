@@ -12,7 +12,7 @@ session_start();
         if($_SESSION['studentVerification']=="ok"){
             $user=$_SESSION["user"];
             $userId=$_SESSION["userId"];
-            $interest="MATHEMATICS";
+            $interest=/*$_SESSION["interest"]*/"MATHEMATICS";
             //echo "<script>alert('$interest');</script>";
         }
     }
