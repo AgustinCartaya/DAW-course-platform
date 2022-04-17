@@ -1,9 +1,4 @@
-<?php
-print_r($_REQUEST);
-if($_POST){
-    header("Location:admin/index.php");
-}
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,16 +18,12 @@ if($_POST){
         <div class="app">
             <a class="app__btn left" href="student">Student</a>
             <a class="app__btn right" href="admin">Admin</a>
-            <form>
-                <input type="button" id="bt" value="Nada">
-            </form>
         </div>
     </div>
     <script src="./src/scripts/form-scripts.js"></script>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="./test.js"></script>
 
 </body>
 

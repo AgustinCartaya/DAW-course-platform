@@ -56,7 +56,7 @@ function deleteVideo($name){
 }
 
 function createStudentUserName($name, $lastName, $date){
-    $date = str_replace(["/","-"],"", $date);
-    return strtolower($name.$date.$lastName);
+    // $date = str_replace(["/","-"],"", $date);
+    return strtolower($name.$lastName);
 }
 
