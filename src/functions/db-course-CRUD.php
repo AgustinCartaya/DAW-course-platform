@@ -81,7 +81,7 @@ function updateResource($id, $name, $type, $url){
     $query->bindParam(':name', $name);
     $query->bindParam(':type', $type);
     $query->bindParam(':url', $url);
-    $query->bindParam(':idResource', $id);
+    $query->bindParam(':id', $id);
     $query->execute();
 }
 

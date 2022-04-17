@@ -7,7 +7,7 @@
                 <div class="data__fields">
                     <div class="fields">
                         <label id="labelSrc" for="resourceUrl" >Source:</label>
-                        <input type="file" name="resourceUrl" id="resourceUrl" value="dddp.txt">
+                        <input type="file" name="resourceUrl" id="resourceUrl" >
                     </div>
 
                     <div class="fields">

@@ -14,12 +14,22 @@ $(document).ready(function () {
 
       case "deleteResource":
         formData.append("action", "deleteResource");
+        formData.set(
+          "resourceUrl",
+          document.getElementById("labelSrc").textContent
+        );
         sednAJAX(formData);
+        changeResourceFrom(false);
         break;
 
       case "editResource":
         formData.append("action", "editResource");
+        formData.set(
+          "resourceUrl",
+          document.getElementById("labelSrc").textContent
+        );
         sednAJAX(formData);
+        changeResourceFrom(false);
         break;
 
       case "cancelResource":
@@ -127,7 +137,7 @@ function refreshResources(data) {
   cards = "";
   data = JSON.parse(data);
   data.map((ele) => {
-    console.log(ele);
+    // console.log(ele);
     cards += `<div class='card__item'>
                     <button>
                       <img
