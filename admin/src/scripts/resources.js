@@ -29,6 +29,7 @@ $(document).ready(function () {
 
       case "cancelResource":
         form.reset();
+        changeChangeResourceFromButtons(true);
         break;
     }
   });
@@ -44,14 +45,37 @@ function addResourceCardsAction() {
         type: node.querySelector("span").textContent,
         url: node.querySelector("input").value,
       };
+
+      // setting values
       const resourceName = document.getElementById("resourceName");
       const resourceUrl = document.getElementById("resourceUrl");
+      const resourceType = document.getElementById("resourceType");
       console.log(obj);
 
       resourceName.value = obj.content;
-      resourceUrl.value = obj.url;
+      // resourceUrl.value = obj.url;
+      resourceType.value = obj.type;
+
+      //modify buttons
+      changeChangeResourceFromButtons(true);
     }
   });
+}
+
+function changeChangeResourceFromButtons(ch) {
+  const btnAddResource = document.getElementById("addResource");
+  const btnDeleteResource = document.getElementById("deleteResource");
+
+  if (ch) {
+    btnAddResource.text = "SAVE";
+    btnAddResource.value = "editResource";
+    btnDeleteResource.disabled = false;
+    console.log("FALSE");
+  } else {
+    btnAddResource.text = "ADD";
+    btnAddResource.value = "addResource";
+    btnDeleteResource.disabled = true;
+  }
 }
 
 function getResourceDefaultImage(type) {
