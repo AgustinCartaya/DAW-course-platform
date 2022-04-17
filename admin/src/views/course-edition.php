@@ -17,6 +17,7 @@
                             <img src="<?php echo defaultResourcePreview($resource['type']);?>" alt="" />
                             <span><?php echo $resource['type'];?></span>
                             <p><?php echo $resource['name']?></p>
+                            <input type="hidden" value=<?php echo $resource['url']?>/>
                         </button>
                     </div>
                     <?php } ?>

@@ -5,29 +5,19 @@
             <fieldset>
                 <legend>Add resource</legend>
                 <div class="data__fields">
-                    <!-- <div class="container__form__image"> 
-                    <img
-                        src="<?php echo defaultImage('resource');?>"
-                        class="image__avatar image__square"
-                    />
-                    <input type="file" class="image__input" id="image__input" name="resourceUrl" accept="image/*,application/pdf,video/*" />
-                    <label for="image__input" class="image__label image__square">
-                        Choose Resource
-                    </label>
-                </div> -->
-
-                    <div class="container__form__image">
-                        <img src="<?php echo defaultImage('resource');?>" class="image__avatar image__square" />
-                        <label for="resourceUrl" class="image__label image__square">Source:</label>
-                        <input type="file" name="resourceUrl" id="resourceUrl" class="image__input"
-                            value="<?php echo (isset($course['resourceUrl']))?$course['resourceUrl']:""; ?>">
+                    <div class="fields">
+                        <label for="resourceUrl" >Source:</label>
+                        <input type="file" name="resourceUrl" id="resourceUrl" value="dddp.txt">
                     </div>
 
                     <div class="fields">
                         <label for="resourceName">Name:</label>
                         <input type="text" name="resourceName" id="resourceName" placeholder="Title"
                             value="<?php echo (isset($course['resourceName']))?$course['resourceName']:""; ?>">
-                        <label for="resourceType">Type:</label>
+                    </div>
+                    
+                    <div class="fields">
+                    <label for="resourceType">Type:</label>
                         <select id="resourceType" name="resourceType">
                             <option value="PDF">PDF</option>
                             <option value="IMAGE">IMAGE</option>

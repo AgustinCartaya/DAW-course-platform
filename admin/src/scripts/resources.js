@@ -5,7 +5,6 @@ $(document).ready(function () {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const formData = new FormData(form);
-    // console.log(e.submitter.name);
 
     switch (e.submitter.name) {
       case "addResource":
@@ -35,29 +34,23 @@ $(document).ready(function () {
   });
 });
 
-// function addResourceCardsAction() {
-//   const cardsContainer = $("#resourcesCardsContainer");
-//   for (let i = 0; i < cardsContainer.children().length; i++) {
-//     console.log(cardsContainer.children()[i]);
-//   }
-//   // console.log(cardsContainer.children[0]);
-
-//   // cardsContainer.addEventListener("click", (e) => {
-//   //   console.log(e.target);
-//   // });
-// }
-
 function addResourceCardsAction() {
-  let name = $("resourceName");
-  let url = $("resourceUrl");
-  let type = $("resourceType");
   const cardsContainer = document.getElementById("resourcesCardsContainer");
-  $(".btttt").click((e) => {
-    console.log(e);
-    // event.target.firstChild.children[1];
-    console.log(e.target.querySelector("p"));
-    // console.log(e.target.firstChild.children[1]);
-    // console.log(e.tagret.querySelector("p"));
+  cardsContainer.addEventListener("click", (e) => {
+    if (e.target.tagName === "IMG" || e.target.tagName === "P") {
+      const node = e.target.parentElement;
+      const obj = {
+        content: node.querySelector("p").textContent,
+        type: node.querySelector("span").textContent,
+        url: node.querySelector("input").value,
+      };
+      const resourceName = document.getElementById("resourceName");
+      const resourceUrl = document.getElementById("resourceUrl");
+      console.log(obj);
+
+      resourceName.value = obj.content;
+      resourceUrl.value = obj.url;
+    }
   });
 }
 
