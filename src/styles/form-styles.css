@@ -144,6 +144,14 @@ select {
   filter: invert(1);
 }
 
+#resourceUrl.hide {
+  display: none;
+}
+
+#resourceUrl.show {
+  display: block;
+}
+
 /* link */
 .btn__link {
   color: var(--secondary-color);

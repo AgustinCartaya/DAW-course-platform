@@ -72,7 +72,7 @@ function addResourceCardsAction() {
       // resourceUrl.value = obj.url;
       resourceType.value = obj.type;
       resourceId.value = obj.id;
-      labelSrc.textContent += " " + obj.url;
+      labelSrc.textContent = obj.url;
       //modify buttons
       changeResourceFromButtons(true);
     }
@@ -84,6 +84,7 @@ function changeResourceFromButtons(ch) {
   const btnDeleteResource = document.getElementById("deleteResource");
   const legendFormResource = document.getElementById("legendFormResource");
   const resourceId = document.getElementById("resourceId").value;
+  const resourceUrl = document.querySelector("input[name='resourceUrl']");
 
   if (ch) {
     btnAddResource.text = "SAVE";
@@ -92,6 +93,8 @@ function changeResourceFromButtons(ch) {
     btnDeleteResource.classList.remove("btn__disabled");
     btnDeleteResource.classList.add("btn__delete");
     legendFormResource.textContent = "Edit resorce #" + resourceId;
+    resourceUrl.classList.add("hide");
+    resourceUrl.classList.remove("show");
   } else {
     btnAddResource.text = "ADD";
     btnAddResource.value = "addResource";
@@ -99,6 +102,8 @@ function changeResourceFromButtons(ch) {
     btnDeleteResource.classList.remove("btn__delete");
     btnDeleteResource.classList.add("btn__disabled");
     legendFormResource.textContent = "Add resorce";
+    resourceUrl.classList.remove("hide");
+    resourceUrl.classList.add("show");
     document.getElementById("labelSrc").textContent = "Source:";
   }
 }
