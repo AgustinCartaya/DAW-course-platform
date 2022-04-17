@@ -119,8 +119,12 @@ textarea {
 }
 
 .card__item button p {
+  padding: 0 10px;
   font-size: 0.8rem;
   color: var(--secondary-color);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 /* Progress bar */
