@@ -3,7 +3,6 @@
     //getting all Admin courses from db
     include_once(APP_FUNCTIONS."/db-course-CRUD.php");
     $courses=getAdminCourses($userId);
-
     if($_POST){
         if( !validString( $_POST['courseTitle'],WORD_TEXT) )
             $messageError='Error: No valid Title';

@@ -19,7 +19,7 @@ function deleteImage($name){
 }
 
 function createStudentUserName($name, $lastName, $date){
-    $date(str_replace("/","", $date));
+    $date = str_replace(["/","-"],"", $date);
     return strtolower($name.$date.$lastName);
 }
 
