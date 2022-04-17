@@ -144,6 +144,12 @@ select {
   filter: invert(1);
 }
 
+#formResources #resourceUrl {
+  height: auto !important;
+  padding: 0;
+  padding-left: 0;
+}
+
 #resourceUrl.hide {
   display: none;
 }
