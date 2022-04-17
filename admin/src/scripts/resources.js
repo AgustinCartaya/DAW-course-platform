@@ -9,46 +9,41 @@ $(document).ready(function () {
     switch (e.submitter.name) {
       case "addResource":
         formData.append("action", "addResource");
-
-        fetch("../AJAX/AJAX-resources.php", {
-          method: "post",
-          body: formData,
-        })
-          .then(function (response) {
-            return response.text();
-          })
-          .then(function (text) {
-            refreshResources(text);
-          })
-          .catch(function (error) {
-            console.error(error);
-          });
-
+        sednAJAX(formData);
         break;
 
       case "deleteResource":
         formData.append("action", "deleteResource");
-        fetch("../AJAX/AJAX-resources.php", {
-          method: "post",
-          body: formData,
-        })
-          .then(function (response) {
-            return response.text();
-          })
-          .then(function (text) {
-            refreshResources(text);
-          })
-          .catch(function (error) {
-            console.error(error);
-          });
+        sednAJAX(formData);
+        break;
+
+      case "editResource":
+        formData.append("action", "editResource");
+        sednAJAX(formData);
         break;
 
       case "cancelResource":
-        changeResourceFromButtons(false);
+        changeResourceFrom(false);
         break;
     }
   });
 });
+
+function sednAJAX(formData) {
+  fetch("../AJAX/AJAX-resources.php", {
+    method: "post",
+    body: formData,
+  })
+    .then(function (response) {
+      return response.text();
+    })
+    .then(function (text) {
+      refreshResources(text);
+    })
+    .catch(function (error) {
+      console.error(error);
+    });
+}
 
 function addResourceCardsAction() {
   const cardsContainer = document.getElementById("resourcesCardsContainer");
@@ -74,27 +69,27 @@ function addResourceCardsAction() {
       resourceId.value = obj.id;
       labelSrc.textContent += " " + obj.url;
       //modify buttons
-      changeResourceFromButtons(true);
+      changeResourceFrom(true);
     }
   });
 }
 
-function changeResourceFromButtons(ch) {
+function changeResourceFrom(ch) {
   const btnAddResource = document.getElementById("addResource");
   const btnDeleteResource = document.getElementById("deleteResource");
   const legendFormResource = document.getElementById("legendFormResource");
   const resourceId = document.getElementById("resourceId").value;
 
   if (ch) {
-    btnAddResource.text = "SAVE";
-    btnAddResource.value = "editResource";
+    btnAddResource.textContent = "SAVE";
+    btnAddResource.name = "editResource";
     btnDeleteResource.disabled = false;
     btnDeleteResource.classList.remove("btn__disabled");
     btnDeleteResource.classList.add("btn__delete");
     legendFormResource.textContent = "Edit resorce #" + resourceId;
   } else {
-    btnAddResource.text = "ADD";
-    btnAddResource.value = "addResource";
+    btnAddResource.textContent = "ADD";
+    btnAddResource.name = "addResource";
     btnDeleteResource.disabled = true;
     btnDeleteResource.classList.remove("btn__delete");
     btnDeleteResource.classList.add("btn__disabled");
