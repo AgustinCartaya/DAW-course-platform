@@ -20,9 +20,8 @@
                 </div>
                 <div class="btn__container">
                     <button class="btn__submit btn__save" type="submit" value="signin">Sign In</button>
-                    <a class="btn__submit btn__cancel" type="submit" value="home">Home</a>
+                    <a class="btn__submit btn__cancel" href="<?php echo W_ROOT;?>">Home</a>
                 </div>
-
             </fieldset>
         </form>
     </div>
