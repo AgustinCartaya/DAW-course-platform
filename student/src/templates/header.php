@@ -30,7 +30,6 @@ session_start();
     <link rel="stylesheet" href="<?php echo W_STYLES;?>/form-styles.css" />
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/home-content.css">
-    <link rel="stylesheet" href="../styles/create-student-form.css">
 
     <title>Web site student</title>
 </head>
@@ -39,12 +38,12 @@ session_start();
     <header class="container__header">
         <nav class="nav__list">
             <li class="nav__item"><a class="nav__link" href="#"><strong>Student settings</strong></a></li>
-            <li class="nav__item"><a class="nav__link"
-                    href="<?php echo W_STUDENT;?>/src/controllers/home.php">Home</a></li>
+            <li class="nav__item"><a class="nav__link" href="<?php echo W_STUDENT;?>/src/controllers/home.php">Home</a>
+            </li>
             <li class="nav__item"><a class="nav__link"
                     href="<?php echo W_STUDENT;?>/src/controllers/courses.php">Courses</a></li>
-            <li class="nav__item"><a class="nav__link"
-                    href="<?php echo W_STUDENT;?>/src/controllers/signout.php">Sign out</a></li>
+            <li class="nav__item"><a class="nav__link" href="<?php echo W_STUDENT;?>/src/controllers/signout.php">Sign
+                    out</a></li>
         </nav>
     </header>
 

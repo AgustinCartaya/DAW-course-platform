@@ -66,10 +66,23 @@ header {
 }
 
 .container {
-  padding: 2em 4em;
+  padding: 2em;
 }
 
 /* Elements ------------------------- */
+
+.resource_title {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 3rem 0 2rem 0;
+  font-size: 2.5rem;
+  color: #fff;
+  border-bottom: 1px solid rgba(170, 170, 170, 0.781);
+}
+
+textarea {
+  padding: 5px;
+}
 
 /* Cards */
 .cards__container {
@@ -86,6 +99,7 @@ header {
   font-size: 1rem;
   background-color: black;
   border: none;
+  cursor: pointer;
   margin: 0;
   padding: 0;
   width: 100%;

@@ -1,5 +1,5 @@
 /* ------ Courses page ------ */
-.courses__container__divided {
+.container__divided {
   display: grid;
   grid-template-columns: 35% auto;
   grid-template-rows: 1fr;
@@ -40,6 +40,8 @@
 
 /* ------ Edit student page ------ */
 .student__edit__container {
+  display: grid;
+  justify-items: center;
   padding: 0 10%;
 }
 

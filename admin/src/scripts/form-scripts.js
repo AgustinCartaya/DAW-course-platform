@@ -1,38 +1,30 @@
-import "./styles.css";
-import messages from "./data/messages.json";
-import alertInfo from "./functions/alertInfo";
-import validEmail from "./functions/validEmail";
+$(document).ready(function () {});
+
+import {
+  alert,
+  fileInputTag,
+  thumbnail,
+  form,
+  messages,
+  btn,
+} from "./data/variables.js";
+import alertInfo from "./functions/alertInfo.js";
 import {
   fillThisInputError,
-  invalidInput,
-  desactiveInputError
-} from "./functions/outlineErrors";
-import {
-  fillThisInputSucess,
-  desactiveInputSuccess
-} from "./functions/oulineSuccess";
-import {
-  btnSubmit,
-  popup,
-  inputs,
-  inputValues,
-  inputFile,
-  avatar,
-  genders,
-  changeMode
-} from "./data/variables";
+  desactiveInputError,
+} from "./functions/outlineErrors.js";
 
-if (inputFile) {
-  inputFile.addEventListener("change", (e) => {
+if (fileInputTag) {
+  fileInputTag.addEventListener("change", (e) => {
     const file = e.target.files[0];
     if (file) {
       const fileReader = new FileReader();
       fileReader.readAsDataURL(file);
       fileReader.addEventListener("load", (e) => {
-        avatar.setAttribute("src", e.target.result);
+        thumbnail.setAttribute("src", e.target.result);
       });
     } else {
-      avatar.setAttribute(
+      thumbnail.setAttribute(
         "src",
         "https://images.unsplash.com/profile-fb-1642446137-6bae7cc893b9.jpg?dpr=2&auto=format&fit=crop&w=60&h=60&q=60&crop=faces&bg=fff"
       );
@@ -40,59 +32,71 @@ if (inputFile) {
   });
 }
 
-if (btnSubmit) {
-  btnSubmit.addEventListener("click", (e) => {
+if (btn.value == "createCourse") {
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
-    popup.classList.add("active");
-
-    const values = inputValues();
-    const [
-      image,
-      name,
-      lastname,
-      date,
-      email,
-      password,
-      repeatPassword
-    ] = values;
-    const [, , , , InputEmail, InputPassword, InputRepeatPassword] = inputs;
-
-    const gender = genders.value;
-    if (values.some((inputValue) => inputValue === "")) {
+    alert.classList.add("active");
+    const values = new FormData(form);
+    console.log(values.get("courseLevel"));
+    if (values.get("courseTitle") == "" || values.get("courseType") == "") {
+      e.preventDefault();
       const { type, message, icon } = messages[1];
-      alertInfo(type, message, icon);
       fillThisInputError();
-      console.log("Rellenar los inputs");
-    } else if (validEmail(email)) {
-      const { type, message, icon } = messages[2];
       alertInfo(type, message, icon);
-      invalidInput(InputEmail);
-      console.log("Email invalido");
-    } else if (password !== repeatPassword) {
-      const { type, message, icon } = messages[3];
-      alertInfo(type, message, icon);
-      invalidInput(InputPassword);
-      invalidInput(InputRepeatPassword);
-      console.log("Las contraseñas no son iguales");
     } else {
       const { type, message, icon } = messages[0];
       alertInfo(type, message, icon);
-      genders.style.outline = "1px solid #43a854";
-      fillThisInputSucess();
-      console.log(`Los datos han sido enviado con exito,
-      imagen: ${image}, nombre y apellido: ${name}
-      ${lastname}, fecha de nacimiento: ${date}, correo: ${email},
-      genero: ${gender}`);
     }
-
     return setTimeout(() => {
-      popup.classList.remove("active");
-      genders.style.outline = "unset";
-      desactiveInputSuccess();
+      alert.classList.remove("active");
       desactiveInputError();
-    }, 2800);
+    }, 2500);
   });
 }
 
-if (changeMode) {
+if (btn.value == "createStudent") {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    alert.classList.add("active");
+    const values = new FormData(form);
+    console.log(values.get("courseLevel"));
+    if (
+      values.get("studentInterest") == "" ||
+      values.get("studentName") == "" ||
+      values.get("studentLastName") == "" ||
+      values.get("studentDateOfBirth") == "" ||
+      values.get("studentPassword") == "" ||
+      values.get("studentRepeatPassword") == ""
+    ) {
+      e.preventDefault();
+      const { type, message, icon } = messages[1];
+      fillThisInputError();
+      alertInfo(type, message, icon);
+    } else {
+      const { type, message, icon } = messages[0];
+      alertInfo(type, message, icon);
+    }
+    return setTimeout(() => {
+      alert.classList.remove("active");
+      desactiveInputError();
+    }, 2500);
+  });
+}
+
+if (btn.value == "signin") {
+  form.addEventListener("submit", (e) => {
+    alert.classList.add("active");
+    const values = new FormData(form);
+    if (values.get("user") == "" || values.get("password") == "") {
+      e.preventDefault();
+      const { type, message, icon } = messages[1];
+      fillThisInputError();
+      alertInfo(type, message, icon);
+    }
+
+    return setTimeout(() => {
+      alert.classList.remove("active");
+      desactiveInputError();
+    }, 2500);
+  });
 }

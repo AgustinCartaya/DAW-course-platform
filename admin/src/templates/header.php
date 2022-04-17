@@ -28,23 +28,23 @@ session_start();
     <link rel="stylesheet" href="<?php echo W_STYLES;?>/form-styles.css" />
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/home-content.css">
-    <link rel="stylesheet" href="../styles/create-student-form.css">
 
     <title>Web site admin</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body>
     <header class="container__header">
         <nav class="nav__list">
             <li class="nav__item"><a class="nav__link" href="#"><strong>Admin settings</strong></a></li>
-            <li class="nav__item"><a class="nav__link"
-                    href="<?php echo W_ADMIN;?>/src/controllers/home.php">Home</a></li>
+            <li class="nav__item"><a class="nav__link" href="<?php echo W_ADMIN;?>/src/controllers/home.php">Home</a>
+            </li>
             <li class="nav__item"><a class="nav__link"
                     href="<?php echo W_ADMIN;?>/src/controllers/courses.php">Courses</a></li>
             <li class="nav__item"><a class="nav__link"
                     href="<?php echo W_ADMIN;?>/src/controllers/students.php">Students</a></li>
-            <li class="nav__item"><a class="nav__link"
-                    href="<?php echo W_ADMIN;?>/src/controllers/signout.php">Sign out</a></li>
+            <li class="nav__item"><a class="nav__link" href="<?php echo W_ADMIN;?>/src/controllers/signout.php">Sign
+                    out</a></li>
         </nav>
     </header>
 
