@@ -19,5 +19,12 @@ if($_POST){
             $resources=getCourseResources($_POST['courseId']);
             echo json_encode($resources);
             break;
+
+        case 'editResource':
+            $resourceUrl=(isset($_FILES['resourceUrl']['name']))?$_FILES['resourceUrl']['name']:NULL;
+            updateResource($_POST['resourceId'], $_POST['resourceName'], $_POST['resourceType'], $resourceUrl);
+            $resources=getCourseResources($_POST['courseId']);
+            echo json_encode($resources);
+            break;
     }
 }
