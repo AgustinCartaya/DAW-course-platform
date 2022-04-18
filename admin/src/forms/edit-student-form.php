@@ -104,11 +104,12 @@
 
                     </div>
                     <div class="btn__container">
-                        <button type="submit" name="action" value="save" class="btn__submit btn__save">Save</button>
+                        <button type="submit" name="action" value="save"
+                            class="btn__submit editStudent btn__save">Save</button>
                         <button type="submit" name="action" value="cancel"
-                            class="btn__submit btn__cancel">Cancel</button>
+                            class="btn__submit editStudent btn__cancel">Cancel</button>
                         <button type="submit" name="action" value="delete"
-                            class="btn__submit btn__delete">Delete</button>
+                            class="btn__submit editStudent btn__delete">Delete</button>
                     </div>
                     <input type="hidden" value="<?php echo $student['id']; ?>" name="studentId">
                 </div>

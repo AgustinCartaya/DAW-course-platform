@@ -89,6 +89,24 @@ if (btn.value == "createCourse") {
   });
 }
 
+if (btn.classList.contains("editStudent")) {
+  fileInputTag.addEventListener("change", (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+      fileReader.addEventListener("load", (e) => {
+        thumbnail.setAttribute("src", e.target.result);
+      });
+    } else {
+      thumbnail.setAttribute(
+        "src",
+        "https://images.unsplash.com/profile-fb-1642446137-6bae7cc893b9.jpg?dpr=2&auto=format&fit=crop&w=60&h=60&q=60&crop=faces&bg=fff"
+      );
+    }
+  });
+}
+
 if (btn.value == "createStudent") {
   form.addEventListener("submit", (e) => {
     alert.classList.add("active");
