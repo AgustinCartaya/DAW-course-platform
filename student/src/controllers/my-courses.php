@@ -1,8 +1,8 @@
 <?php include("../templates/header.php"); ?>
 
 <?php
-include_once(APP_FUNCTIONS."/db-course-CRUD.php");
-    $courses=getAllCourses();
+include_once(APP_FUNCTIONS."/db-student-course-CRUD.php");
+    $courses=getFollowedCourses($userId);
 
 ?>
 <?php include("../views/my-courses-content.php"); ?>

@@ -222,6 +222,7 @@ select {
 .btn__disabled {
   color: black;
   background-color: gray;
+  border: none;
 }
 
 .btn__disabled:hover {

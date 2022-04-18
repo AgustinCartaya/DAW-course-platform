@@ -8,40 +8,27 @@ function getRecommendedCourses($type){
     return $query->fetchAll(PDO::FETCH_ASSOC);
 }
 
-
-function getFollowedCourses($id){
+function getFollowedCourses($idStudent){
   include("db-connection.php");
-  $query=$conection->prepare("SELECT * from COURSES INNER JOIN INSCRIPTIONS WHERE COURSES.id=INSCRIPTIONS.idCourse AND INSCRIPTIONS.idStudent=:id");
-  $query->bindParam(':id', $id);
+  $query=$conection->prepare("SELECT * FROM COURSES, INSCRIPTIONS WHERE COURSES.id=INSCRIPTIONS.idCourse AND INSCRIPTIONS.idStudent=:idStudent");
+  $query->bindParam(':idStudent', $idStudent);
   $query->execute();
   return $query->fetchAll(PDO::FETCH_ASSOC);
-
 }
 
-function FollowCourses($courseId,$studentid){
+function getUnFollowedCourses($idStudent){
   include("db-connection.php");
-  $query=$conection->prepare("INSERT INTO INSCRIPTIONS (idStudent,idCourse,date) VALUES (:sid,:cid,0)");
-  $query->bindParam(':cid', $courseId);
-  $query->bindParam(':sid', $studentid);
+  $query=$conection->prepare("SELECT * FROM COURSES WHERE id NOT IN (SELECT idCourse FROM INSCRIPTIONS WHERE idStudent = :idStudent)");
+  $query->bindParam(':idStudent', $idStudent);
   $query->execute();
-  return $query->fetch(PDO::FETCH_ASSOC);
+  return $query->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function UNFollowCourses($courseId,$studentid){
+function createInscription($idStudent, $idCourse){
   include("db-connection.php");
-  $query=$conection->prepare("DELETE FROM INSCRIPTIONS WHERE idCourse=:cid AND idStudent=:sid");
-  $query->bindParam(':cid', $courseId);
-  $query->bindParam(':sid', $studentid);
+  $query=$conection->prepare("INSERT INTO INSCRIPTIONS (idStudent, idCourse) VALUES (:idStudent, :idCourse)");
+  $query->bindParam(':idStudent', $idStudent);
+  $query->bindParam(':idCourse', $idCourse);
   $query->execute();
-  return $query->fetch(PDO::FETCH_ASSOC);
 }
 
-
-
-
-
-
-
-
-
-?>
