@@ -40,8 +40,6 @@
                                         name="studentInterest" id="studentInterest" placeholder="Interest">
                                 </div>
                             </div>
-
-
                         </div>
 
                         <div class="data__right__side">

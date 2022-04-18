@@ -12,15 +12,7 @@
                 <?php include("../forms/edit-resource-form.php"); ?>
                 <div id="resourcesCardsContainer" class="cards__container resource__card__list">
                     <?php foreach($resources as $resource){ ?>
-                    <div class="card__item">
-                        <button>
-                            <img src="<?php echo defaultResourcePreview($resource['type']);?>" alt="" />
-                            <span><?php echo $resource['type'];?></span>
-                            <p><?php echo $resource['name']?></p>
-                            <input type="hidden" name="resourceUrl" value="<?php echo $resource['url']?>"/>
-                            <input type="hidden" name="resourceId" value="<?php echo $resource['id']?>"/>
-                        </button>
-                    </div>
+                        <?php include("../templates/resource-preview-card.php"); ?>
                     <?php } ?>
                 </div>
 

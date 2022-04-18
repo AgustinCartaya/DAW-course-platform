@@ -6,14 +6,13 @@
     </div>
     <div class="container__statistics">
         <h3 class="statistics__title">statistics</h3>
-        <div class="progressBar__courses">
-            <p>Number of courses</p>
-            <div class="load-bar"><span class="progress"></span>
+            <div class="progressBar__courses">
+                <p>Number of courses: <?php echo $totalCourses['total']; ?></p>
+                <div class="load-bar"><span class="progress"></span></div>
             </div>
             <div class="progressBar__students">
-                <p>Number of students</p>
-                <div class="load-bar"><span class="progress"></span>
-                </div>
+                <p>Number of students: <?php echo $totalRegisteredStudents['total']; ?></p>
+                <div class="load-bar"><span class="progress"></span></div>
             </div>
         </div>
     </div>

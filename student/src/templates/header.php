@@ -36,14 +36,24 @@ session_start();
 <body>
     <header class="container__header">
         <nav class="nav__list">
-            <li class="nav__item"><a class="nav__link" href="#"><strong>Student settings</strong></a></li>
-            <li class="nav__item"><a class="nav__link" href="<?php echo W_STUDENT;?>/src/controllers/home.php">Home</a>
+            <li class="nav__item">
+                <a class="nav__link" href="#"><strong>Student settings</strong></a>
+            </li>
+            <li class="nav__item">
+                <a class="nav__link" href="<?php echo W_STUDENT;?>/src/controllers/home.php">Home</a>
             </li>
             <li class="nav__item"><a class="nav__link"
-                    href="<?php echo W_STUDENT;?>/src/controllers/my-courses.php">My courses</a></li>
+                    href="<?php echo W_STUDENT;?>/src/controllers/my-courses.php">My courses</a>
+            </li>
             <li class="nav__item"><a class="nav__link"
-                    href="<?php echo W_STUDENT;?>/src/controllers/search-courses.php">Search courses</a></li>
-            <li class="nav__item"><a class="nav__link" href="<?php echo W_STUDENT;?>/src/controllers/signout.php">Sign out</a></li>
+                    href="<?php echo W_STUDENT;?>/src/controllers/search-courses.php">Search courses</a>
+            </li>
+            <li class="nav__item"><a class="nav__link"
+                    href="<?php echo W_STUDENT;?>/src/controllers/forum.php">Forum</a>
+            </li>
+            <li class="nav__item">
+                <a class="nav__link" href="<?php echo W_STUDENT;?>/src/controllers/signout.php">Sign out</a>
+            </li>
         </nav>
     </header>
 

@@ -74,7 +74,6 @@ function addResourceCardsAction() {
       const labelSrc = document.getElementById("labelSrc");
 
       resourceName.value = obj.content;
-      // resourceUrl.value = obj.url;
       resourceType.value = obj.type;
       resourceId.value = obj.id;
       labelSrc.textContent = obj.url;
@@ -135,26 +134,5 @@ function refreshResources(data) {
   let resourcesCardsContainer = document.getElementById(
     "resourcesCardsContainer"
   );
-  cards = "";
-  data = JSON.parse(data);
-  data.map((ele) => {
-    // console.log(ele);
-    cards += `<div class='card__item'>
-                    <button>
-                      <img
-                        src="${getResourceDefaultImage(ele.type)}"
-                        alt="Image"
-                        />
-                        <span>${ele.type}</span>
-                        <p>${ele.name}</p>
-                        <input type="hidden" name="resourceUrl" value="${
-                          ele.url
-                        }"/>
-                        <input type="hidden" name="resourceId" value="${
-                          ele.id
-                        }" />
-                    </button>
-                  </div>`;
-  });
-  resourcesCardsContainer.innerHTML = cards;
+  resourcesCardsContainer.innerHTML = data;
 }

@@ -24,6 +24,14 @@ function getStudents(){
     return $query->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function getCountRegisteredStudents($idAdmin){
+    include("db-connection.php");
+    $query=$conection->prepare("SELECT COUNT(*) as total FROM STUDENTS WHERE id IN ( SELECT idStudent FROM INSCRIPTIONS WHERE idCourse IN ( SELECT id FROM COURSES WHERE idAdmin=:idAdmin) )");
+    $query->bindParam(':idAdmin', $idAdmin);
+    $query->execute();
+    return $query->fetch(PDO::FETCH_LAZY);
+}
+
 function createStudent($user, $password, $name, $lastName, $gender, $dateOfBirth, $email, $level, $interest, $image){
     include("db-connection.php");
     $query=$conection->prepare("INSERT INTO STUDENTS (user, password, name, lastName, gender, dateOfBirth, email, level, interest, image) VALUES (:user, :password, :name, :lastName, :gender, :dateOfBirth, :email, :level, :interest, :image)");

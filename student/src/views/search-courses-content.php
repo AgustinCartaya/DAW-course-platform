@@ -6,7 +6,7 @@
     <div class="container__right">
         <div id="coursePreviewCardsContainer" class="cards__container course__card__list">
             <?php foreach($courses as $course){ ?>
-            <?php include("../templates/course-preview-card.php"); ?>
+            <?php include("../templates/search-course-card.php"); ?>
             <?php } ?>
         </div>
     </div>

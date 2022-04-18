@@ -4,6 +4,14 @@ if ( ! defined( 'APP_ROOT' ) ) {
 }
 
 include_once(APP_FUNCTIONS."/db-course-CRUD.php");
+include_once(APP_FUNCTIONS."/util.php");
+
+function sendCards($courseId){
+    $resources=getCourseResources($courseId);
+    foreach($resources as $resource){
+        include("../templates/resource-preview-card.php");
+    }
+}
 if($_POST){
     $action=(isset($_POST['action']))?$_POST['action']:"";
     switch($action){
@@ -25,10 +33,8 @@ if($_POST){
                     $resourceUrl = makeVideosCopy($resourceUrlName, $resourceUrlTemp, "");
                     break;
             }
-            // $resourceUrl=(isset($_FILES['resourceUrl']['name']))?$_FILES['resourceUrl']['name']:NULL;
             createResource($_POST['courseId'], $_POST['resourceName'], $_POST['resourceType'], $resourceUrl);
-            $resources=getCourseResources($_POST['courseId']);
-            echo json_encode($resources);
+            sendCards($_POST['courseId']);
             break;
 
         case 'deleteResource':
@@ -47,15 +53,12 @@ if($_POST){
                     break;
             }
             deleteResource($_POST['resourceId']);
-            $resources=getCourseResources($_POST['courseId']);
-            echo json_encode($resources);
+            sendCards($_POST['courseId']);
             break;
 
         case 'editResource':
-            $resourceUrl=(isset($_FILES['resourceUrl']['name']))?$_FILES['resourceUrl']['name']:NULL;
-            updateResource($_POST['resourceId'], $_POST['resourceName'], $_POST['resourceType'], $resourceUrl);
-            $resources=getCourseResources($_POST['courseId']);
-            echo json_encode($resources);
+            updateResource($_POST['resourceId'], $_POST['resourceName'], $_POST['resourceType'], $_POST['resourceUrl']);
+            sendCards($_POST['courseId']);
             break;
     }
 }

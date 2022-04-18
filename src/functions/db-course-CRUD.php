@@ -16,6 +16,14 @@ function getAdminCourses($idAdmin){
     return $query->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function getCountAdminCourses($idAdmin){
+    include("db-connection.php");
+    $query=$conection->prepare("SELECT COUNT(*) as total FROM COURSES WHERE idAdmin=:idAdmin");
+    $query->bindParam(':idAdmin', $idAdmin);
+    $query->execute();
+    return $query->fetch(PDO::FETCH_LAZY);
+}
+
 function getAllCourses(){
     include("db-connection.php");
     $query=$conection->prepare("SELECT * FROM COURSES");
