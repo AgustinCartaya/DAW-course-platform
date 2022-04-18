@@ -1,0 +1,1 @@
+<h1>Course # <?php echo $course["id"]; ?> view</h1>

@@ -16,6 +16,13 @@ function getAdminCourses($idAdmin){
     return $query->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function getAllCourses(){
+    include("db-connection.php");
+    $query=$conection->prepare("SELECT * FROM COURSES");
+    $query->execute();
+    return $query->fetchAll(PDO::FETCH_ASSOC);
+}
+
 function createCourse($idAdmin, $title, $type, $level,  $description, $thumbnail){
     include("db-connection.php");
     $query=$conection->prepare("INSERT INTO COURSES (idAdmin, title, type, level, description, thumbnail) VALUES (:idAdmin, :title, :type, :level, :description, :thumbnail)");
