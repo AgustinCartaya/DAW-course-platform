@@ -86,7 +86,7 @@
 }
 
 /* internal form data */
-.form__data > fieldset {
+fieldset {
   padding: 2rem;
   border-color: var(--color1-2);
   background-color: var(--color1-3);
@@ -94,7 +94,7 @@
   border-radius: 4px;
 }
 
-.form__data > fieldset > legend {
+fieldset > legend {
   text-align: center;
   color: var(--secondary-color);
   font-size: 1.8rem;

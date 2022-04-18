@@ -76,3 +76,60 @@
   grid-template-rows: auto;
   margin: 15px 0 0 0;
 }
+
+
+/*Student section*/
+
+
+.body__container__course{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: white;
+  padding: 1rem;
+}
+
+
+.container__student-course {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, auto);
+  row-gap: 1rem;
+  border-radius: 10px;
+}
+
+.course__image {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 0 10px 0;
+  padding: 1rem;
+}
+
+.course__avatar {
+  width: 120px;
+  height: 120px;
+  z-index: 1;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.course__content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  column-gap: 10px;
+}
+
+.course__title,
+.course__date,
+.couser__level,
+.course__teacher {
+  text-align: start;
+}
+
+.course__description {
+  text-align: center;
+}
