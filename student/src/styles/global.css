@@ -124,25 +124,58 @@
 }
 
 .container__student-course p,
-.course__description p {
+.course__description p,
+.container__divided p {
   margin: 0;
   font-size: 13px;
   color: #b2b2b2;
 }
 
+.course__title.center p,
+.course__title.center span {
+  text-align: center;
+}
+
+.container__divided .course__title,
+.course__date,
+.course__level,
+.course__teacher,
+.course__type,
+.course__description {
+  margin: 0;
+}
+
 .course__title,
 .course__date,
-.couser__level,
+.course__level,
 .course__teacher,
+.course__type,
 .course__description {
   display: flex;
   flex-direction: column;
   font-size: 0.9rem;
-  color: white;
   text-align: start;
   margin: 1rem 0;
 }
 
+.course__title span,
+.course__type span,
+.course__date span,
+.course__level span,
+.course__teacher span,
+.course__description span {
+  text-align: center;
+  color: white;
+}
+
 .course__description {
   text-align: start;
+}
+
+.data__fields {
+  row-gap: 0;
+}
+
+.fields__divided {
+  justify-items: center;
 }
