@@ -2,6 +2,8 @@
 <?php 
     //getting all Admin courses from db
     include_once(APP_FUNCTIONS."/db-course-CRUD.php");
+    include_once("../functions/util.php");
+    $disciplines = getDisciplines();
     $courses=getAdminCourses($userId);
     if($_POST){
         if( !validString( $_POST['courseTitle'],WORD_TEXT) )
@@ -15,7 +17,7 @@
 
         else
         {
-            include("../functions/util.php");
+            // include("../functions/util.php");
             $courseImageName=(isset($_FILES['courseThumbnail']['name']))?$_FILES['courseThumbnail']['name']:"";
             $courseImageTemp=(isset($_FILES['courseThumbnail']['tmp_name']))?$_FILES['courseThumbnail']['tmp_name']:"";
             $courseImage = makeImageCopy($courseImageName, $courseImageTemp, "");

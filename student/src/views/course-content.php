@@ -1,4 +1,4 @@
-<h1 class="home_title">Course # <?php echo $course["id"]; ?> view</h1>
+<h1 class="home_title"><?php echo $course["title"]; ?></h1>
 <div class="body__container__course">
     <fieldset>
         <legend class="title">Course Detail</legend>
@@ -11,31 +11,35 @@
                 <div class="content__title-date">
                     <div class="course__title">
                         <p>Title:<br /></p>
-                        <span>Matematica 1</span>
+                        <span><?php echo $course["title"]; ?></span>
                     </div>
+
                     <div class="course__date">
-                        <p>Date:<br /></p>
-                        <span>17/04/2022</span>
+                        <p>Inscription date:<br /></p>
+                        <span><?php echo explode(' ', $inscriptionDate)[0]; ?></span>
                     </div>
                 </div>
                 <div class="content__teacher-level">
                     <div class="course__teacher">
                         <p>Teacher:<br /></p>
-                        <span>Armando Duarte</span>
+                        <span><?php echo $teacher; ?></span>
                     </div>
                     <div class="couser__level">
                         <p>Level:<br /></p>
-                        <span>Level 1</span>
+                        <span>Level <?php echo $course["level"]; ?></span>
                     </div>
                 </div>
             </div>
         </div>
         <div class="course__description">
             <p>Description:<br /></p>
-            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus doloribus sunt, dolorum laborum
-                illum ad quibusdam repellendus ut sapiente, facilis alias mollitia vero! Culpa voluptas at saepe in hic
-                perspiciatis temporibus voluptatum nesciunt, ratione, quidem consequuntur omnis animi praesentium
-                sint.</span>
+            <span><?php echo $course["description"]; ?></span>
         </div>
     </fieldset>
+</div>
+
+<div id="resourcesCardsContainer" class="cards__container resource__card__list">
+    <?php foreach($resources as $resource){ ?>
+        <?php include("../templates/resource-preview-card.php"); ?>
+    <?php } ?>
 </div>

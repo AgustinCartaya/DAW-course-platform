@@ -28,7 +28,11 @@
 
                             <div class="fields">
                                 <label for="courseType">Type</label>
-                                <input type="text" name="courseType" id="courseType" placeholder="Type">
+                                <select id="courseType" name="courseType">
+                                    <?php foreach($disciplines as $discipline){ ?>
+                                    <option value="<?php echo $discipline ?>"><?php echo $discipline ?></option>
+                                    <?php } ?>
+                                </select>
                             </div>
 
                             <div class="fields">

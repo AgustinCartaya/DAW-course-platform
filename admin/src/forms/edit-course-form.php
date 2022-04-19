@@ -31,13 +31,17 @@
                             </div>
 
                             <div class="fields__divided">
-
                                 <div class="fields">
                                     <label for="courseType">Type</label>
-                                    <input type="text" required name="courseType" id="courseType" placeholder="Type"
-                                        value="<?php echo $course['type']; ?>">
+                                    <select id="courseType" name="courseType">
+                                        <?php foreach($disciplines as $discipline){ ?>
+                                            <option <?php  echo ($course['type']==$discipline)?"selected ":""; ?> 
+                                            value="<?php echo $discipline ?>">
+                                            <?php echo $discipline ?>
+                                            </option>                                            
+                                        <?php } ?>
+                                    </select>
                                 </div>
-
                                 <div class="fields">
                                     <label for="courseLevel">Level</label>
                                     <select id="courseLevel" name="courseLevel">

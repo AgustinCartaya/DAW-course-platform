@@ -24,16 +24,19 @@
                                 <div class="fields">
                                     <label for="studentLevel">Level</label>
                                     <select id="studentLevel" name="studentLevel">
-                                        <?php for ($i=1; $i<=10; $i++){ ?>
+                                        <?php for ($i=0; $i<=10; $i++){ ?>
                                         <option value="<?php echo $i ?>">Level <?php echo $i ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
 
                                 <div class="fields">
-                                    <label for="studentInterest">Interest:</label>
-                                    <input type="text" name="studentInterest" id="studentInterest"
-                                        placeholder="Ex: Physics">
+                                    <label for="studentInterest">Interest</label>
+                                    <select id="studentInterest" name="studentInterest">
+                                        <?php foreach($disciplines as $discipline){ ?>
+                                        <option value="<?php echo $discipline ?>"><?php echo $discipline ?></option>
+                                        <?php } ?>
+                                    </select>
                                 </div>
                             </div>
                         </div>

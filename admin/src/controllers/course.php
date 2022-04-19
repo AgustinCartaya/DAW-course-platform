@@ -4,6 +4,8 @@
 // print_r($_REQUEST);
 include_once(APP_FUNCTIONS."/db-course-CRUD.php");
 include_once("../AJAX/AJAX-resources.php");
+include_once("../functions/util.php");
+$disciplines = getDisciplines();
 if($_POST){//cuando terminamos de editar el curso lo guardamos en la db (posiblemente esto no va aqui)
 
     $action=(isset($_POST['action']))?$_POST['action']:"";
@@ -22,8 +24,6 @@ if($_POST){//cuando terminamos de editar el curso lo guardamos en la db (posible
 
             else
             {
-
-                include("../functions/util.php");
                 $courseImageName=(isset($_FILES['courseThumbnail']['name']))?$_FILES['courseThumbnail']['name']:"";
                 $courseImageTemp=(isset($_FILES['courseThumbnail']['tmp_name']))?$_FILES['courseThumbnail']['tmp_name']:"";
                 $courseImage = makeImageCopy($courseImageName, $courseImageTemp, "");
@@ -47,7 +47,6 @@ if($_POST){//cuando terminamos de editar el curso lo guardamos en la db (posible
             break;    
 
         case "delete":
-            include("../functions/util.php");
             deleteImage($_POST['courseThumbnail_res']);
             deleteCourse($_POST['courseId']);
             header("Location:courses.php"); 
