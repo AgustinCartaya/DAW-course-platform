@@ -42,5 +42,15 @@ function createInscription($idStudent, $idCourse){
   $query->execute();
 }
 
+function getInscriptionDate($idStudent, $idCourse){
+  include("db-connection.php");
+  $query=$conection->prepare("SELECT date FROM INSCRIPTIONS WHERE idStudent=:idStudent AND idCourse=:idCourse");
+  $query->bindParam(':idStudent', $idStudent);
+  $query->bindParam(':idCourse', $idCourse);
+  $query->execute();
+  return $query->fetch(PDO::FETCH_LAZY);
+}
+
+
 
 
