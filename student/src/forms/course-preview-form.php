@@ -24,9 +24,9 @@
                                     id="coursePreviewType"><?php echo (isset($course))?$course['type']:""; ?></span></p>
                         </div>
                     </div>
-                    <div class="course__description">
-                        <p <?php echo (isset($course))?"":"hidden"; ?>>Description: <span id="coursePreviewDescription">
-                                <?php echo (isset($course))?$course['description']:""; ?></span></p>
+                    <div class="course__description center">
+                        <p <?php echo (isset($course))?"":"hidden"; ?>>Description:</p>
+                        <p><span id="coursePreviewDescription"><?php echo (isset($course))?$course['description']:""; ?></span></p>
                     </div>
 
                 </div>

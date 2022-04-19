@@ -35,6 +35,7 @@
 
 .php__form__error {
   color: #e34747 !important;
+  margin-bottom: 20px !important;
 }
 
 .success {
