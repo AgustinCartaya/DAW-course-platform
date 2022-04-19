@@ -15,9 +15,12 @@ define( 'APP_DATA_FILES', APP_ROOT.'/src/data-files/' );
 define( 'W_ROOT', 'http://'.$_SERVER['HTTP_HOST'].'/DAW-project');
 define( 'W_ADMIN', W_ROOT."/admin" );
 define( 'W_STUDENT', W_ROOT."/student" );
-define( 'W_IMAGES', W_ROOT.'/src/assets/img' );
 define( 'W_FUNCTIONS', W_ROOT.'/src/functions' );
 define( 'W_STYLES', W_ROOT.'/src/styles' );
+
+define( 'W_IMAGES', W_ROOT.'/src/assets/img' );
+define( 'W_PDF', W_ROOT.'/src/assets/pdf' );
+define( 'W_VIDEOS', W_ROOT.'/src/assets/videos' );
 
 /** images */
 define( 'W_IMG_STUDENT', 'student.png' );

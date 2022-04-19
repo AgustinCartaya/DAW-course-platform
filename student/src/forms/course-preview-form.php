@@ -3,7 +3,7 @@
     <div class="container__form">
         <form class="form__data" action="" method="POST" id="form">
             <fieldset>
-                <legend>Course Preview</legend>
+                <legend><?php echo (isset($course))?$course['title']:"Course Preview"; ?></legend>
                 <div class="data__fields">
                     <p id="minimumLevelError" class="php__form__error">
                         <?php echo (isset($messageError))?$messageError:""; ?>
@@ -13,23 +13,19 @@
                             src="<?php echo (isset($course))?verifyImage($course['thumbnail'],'course'):defaultImage('course');?>"
                             class="image__avatar image__square" />
                     </div>
-                    <div class="course__title center">
-                        <p><br></p> <span
-                            id=" coursePreviewTitle"><?php echo (isset($course))?$course['title']:""; ?></span>
-                    </div>
                     <div class="fields__divided">
                         <div class="course__level">
-                            <p>Level: <span
+                            <p <?php echo (isset($course))?"":"hidden"; ?> >Level: <span
                                     id="coursePreviewLevel"><?php echo (isset($course))?$course['level']:""; ?></span>
                             </p>
                         </div>
                         <div class="course__type">
-                            <p>Type: <span
+                            <p <?php echo (isset($course))?"":"hidden"; ?>>Type: <span
                                     id="coursePreviewType"><?php echo (isset($course))?$course['type']:""; ?></span></p>
                         </div>
                     </div>
                     <div class="course__description">
-                        <p>Description: <span id="coursePreviewDescription">
+                        <p <?php echo (isset($course))?"":"hidden"; ?>>Description: <span id="coursePreviewDescription">
                                 <?php echo (isset($course))?$course['description']:""; ?></span></p>
                     </div>
 
