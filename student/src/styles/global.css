@@ -88,6 +88,7 @@
 
 .body__container__course fieldset {
   width: 500px;
+  padding: 2rem 3rem;
 }
 
 .container__student-course {
@@ -136,6 +137,11 @@
   text-align: center;
 }
 
+.course__title p,
+.course__title span {
+  text-align: start;
+}
+
 .container__divided .course__title,
 .course__date,
 .course__level,
@@ -164,12 +170,15 @@
 .course__level span,
 .course__teacher span,
 .course__description span {
-  text-align: center;
+  text-align: start;
   color: white;
 }
 
 .course__description {
   text-align: start;
+}
+.course__description.center p {
+  text-align: center;
 }
 
 .data__fields {

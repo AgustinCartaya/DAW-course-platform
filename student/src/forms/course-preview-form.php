@@ -14,7 +14,7 @@
                             class="image__avatar image__square" />
                     </div>
                     <div class="course__title center">
-                        <p><br></p> <span
+                        <p><br></p> <span class="center"
                             id=" coursePreviewTitle"><?php echo (isset($course))?$course['title']:""; ?></span>
                     </div>
                     <div class="fields__divided">
@@ -28,7 +28,7 @@
                                     id="coursePreviewType"><?php echo (isset($course))?$course['type']:""; ?></span></p>
                         </div>
                     </div>
-                    <div class="course__description">
+                    <div class="course__description center">
                         <p>Description: <span id="coursePreviewDescription">
                                 <?php echo (isset($course))?$course['description']:""; ?></span></p>
                     </div>
