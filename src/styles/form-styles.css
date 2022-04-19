@@ -87,7 +87,7 @@
 
 /* internal form data */
 fieldset {
-  padding: 2rem;
+  padding: 2rem 3rem;
   border-color: var(--color1-2);
   background-color: var(--color1-3);
   color: var(--color1-4);
