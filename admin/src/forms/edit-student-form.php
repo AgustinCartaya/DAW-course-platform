@@ -35,9 +35,15 @@
                                     </select>
                                 </div>
                                 <div class="fields">
-                                    <label for="studentInterest">Interest:</label>
-                                    <input type="text" class="form-control" value="<?php echo $student['interest']; ?>"
-                                        name="studentInterest" id="studentInterest" placeholder="Interest">
+                                    <label for="studentInterest">Interest</label>
+                                    <select id="studentInterest" name="studentInterest">
+                                        <?php foreach($disciplines as $discipline){ ?>
+                                        <option <?php  echo ($student['interest']==$discipline)?"selected ":""; ?> 
+                                            value="<?php echo $discipline ?>">
+                                            <?php echo $discipline ?>
+                                        </option>
+                                        <?php } ?>
+                                    </select>
                                 </div>
                             </div>
                         </div>

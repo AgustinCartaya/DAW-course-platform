@@ -2,8 +2,9 @@
 <?php 
     //getting all students from db
     include_once(APP_FUNCTIONS."/db-student-CRUD.php");
+    include_once("../functions/util.php");
+    $disciplines = getDisciplines();
     $students=getStudents();
-
     if($_POST){
 
         
@@ -29,7 +30,6 @@
         else
         {
             // copying the image on the folder
-            include("../functions/util.php");
             $studentImageName=(isset($_FILES['studentImage']['name']))?$_FILES['studentImage']['name']:"";
             $studentImageTemp=(isset($_FILES['studentImage']['tmp_name']))?$_FILES['studentImage']['tmp_name']:"";
             $studentImage = makeImageCopy($studentImageName, $studentImageTemp, "");

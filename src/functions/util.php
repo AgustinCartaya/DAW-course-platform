@@ -34,6 +34,19 @@ function defaultResourcePreview($type){
     }
 }
 
+function getDisciplines(){
+    $myfile = fopen(APP_DATA_FILES."/disciplines.txt", "r") or die("Unable to open file!");
+    $disciplines = array();
+    while(!feof($myfile)){
+        $text = fgets($myfile);
+        if(!empty($text))
+            $disciplines[] = trim($text);
+    }
+    fclose($myfile);
+    sort($disciplines);
+    array_unshift($disciplines, "Other");
+    return $disciplines;
+}
 
 
 function verifyImage($name, $type){

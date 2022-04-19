@@ -2,10 +2,11 @@
 <?php 
 //update student
 include_once(APP_FUNCTIONS."/db-student-CRUD.php");
+include_once("../functions/util.php");
+$disciplines = getDisciplines();
 if($_POST){//cuando terminamos de editar el curso lo guardamos en la db (posiblemente esto no va aqui)
 
     $action=(isset($_POST['action']))?$_POST['action']:"";
-
     switch($action){
         case "save":
             if( !validString( $_POST['studentName'],WORD_PLAIN_TEXT) )
@@ -29,7 +30,6 @@ if($_POST){//cuando terminamos de editar el curso lo guardamos en la db (posible
 
             else
             {
-                include("../functions/util.php");
                 $studentImageName=(isset($_FILES['studentImage']['name']))?$_FILES['studentImage']['name']:"";
                 $studentImageTemp=(isset($_FILES['studentImage']['tmp_name']))?$_FILES['studentImage']['tmp_name']:"";
                 $studentImage = makeImageCopy($studentImageName, $studentImageTemp, "");
@@ -58,7 +58,6 @@ if($_POST){//cuando terminamos de editar el curso lo guardamos en la db (posible
             break;    
 
         case "delete":
-            include("../functions/util.php");
             deleteImage($_POST['studentImage_res']);
             deleteStudent($_POST['studentId']);
             header("Location:students.php");

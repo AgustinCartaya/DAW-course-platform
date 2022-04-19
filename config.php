@@ -9,6 +9,7 @@ define( 'APP_PDF', APP_ROOT.'/src/assets/pdf' );
 define( 'APP_VIDEOS', APP_ROOT.'/src/assets/videos' );
 define( 'APP_FUNCTIONS', APP_ROOT.'/src/functions' );
 define( 'APP_STYLES', APP_ROOT.'/src/styles' );
+define( 'APP_DATA_FILES', APP_ROOT.'/src/data-files/' );
 
 /** global pages */
 define( 'W_ROOT', 'http://'.$_SERVER['HTTP_HOST'].'/DAW-project');
@@ -26,6 +27,7 @@ define( 'W_IMG_RESOURCE', 'resource.png' );
 define( 'W_IMG_PDF', 'pdf.png' );
 define( 'W_IMG_IMAGE', 'image.png' );
 define( 'W_IMG_VIDEO', 'video.png' );
+
 
 /** words */
 define( 'WORD_PDF', 'pdf' );
