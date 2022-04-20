@@ -10,6 +10,7 @@ define( 'APP_VIDEOS', APP_ROOT.'/src/assets/videos' );
 define( 'APP_FUNCTIONS', APP_ROOT.'/src/functions' );
 define( 'APP_STYLES', APP_ROOT.'/src/styles' );
 define( 'APP_DATA_FILES', APP_ROOT.'/src/data-files/' );
+define('APP_QCM',APP_ROOT.'/src/qcm/');
 
 /** global pages */
 define( 'W_ROOT', 'http://'.$_SERVER['HTTP_HOST'].'/DAW-project');

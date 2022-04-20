@@ -51,6 +51,9 @@ session_start();
             <li class="nav__item"><a class="nav__link"
                     href="<?php echo W_STUDENT;?>/src/controllers/forum.php">Forum</a>
             </li>
+            <li class="nav__item"><a class="nav__link"
+                    href="<?php echo W_STUDENT;?>/src/controllers/qcm-page.php">QCM</a>
+            </li>
             <li class="nav__item">
                 <a class="nav__link" href="<?php echo W_STUDENT;?>/src/controllers/signout.php">Sign out</a>
             </li>
