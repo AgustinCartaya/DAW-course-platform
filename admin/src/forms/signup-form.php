@@ -1,7 +1,7 @@
 <div class="alert"></div>
-<div class="body__container__form">
+<div class="body__container__form__home">
     <div class="container__form">
-        <form class="form__data" method="POST">
+        <form class="form__data" method="POST" id="form">
             <fieldset>
                 <legend>Sign up for admin</legend>
                 <div class="data__fields">
@@ -25,7 +25,8 @@
 
                     <a class="btn__link" href="signin.php">Sign in</a>
                 </div>
-                <div class="btn__container"> <button type="submit" class="btn__submit btn__unique">Sign up</button>
+                <div class="btn__container"> <button type="submit" class="btn__submit btn__unique" value="signup">Sign
+                        up</button>
                 </div>
             </fieldset>
         </form>

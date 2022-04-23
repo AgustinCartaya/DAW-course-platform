@@ -152,3 +152,21 @@ if (btn.value == "signin") {
     }, 2500);
   });
 }
+
+if (btn.value == "signup") {
+  form.addEventListener("submit", (e) => {
+    alert.classList.add("active");
+    const values = new FormData(form);
+    if (values.get("user") == "" || values.get("password") == "" || values.get("repPassword") == "") {
+      e.preventDefault();
+      const { type, message, icon } = messages[1];
+      fillThisInputError();
+      alertInfo(type, message, icon);
+    }
+
+    return setTimeout(() => {
+      alert.classList.remove("active");
+      desactiveInputError();
+    }, 2500);
+  });
+}

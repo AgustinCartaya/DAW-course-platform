@@ -1,5 +1,5 @@
 <div class="alert"></div>
-<div class="body__container__form">
+<div class="body__container__form__home">
     <div class="container__form">
         <form class="form__data" method="POST" id="form">
             <fieldset>

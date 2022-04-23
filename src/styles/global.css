@@ -3,7 +3,7 @@
 /*Global colors*/
 
 body {
-  height: 100vh;
+  height: 100%;
   font-family: "Quicksand", sans-serif;
   background-color: var(--main-color);
   padding: 0;
@@ -52,6 +52,18 @@ header {
 
 .container {
   padding: 2rem;
+  height: 100%;
+}
+
+.container__fluid {
+  padding: 2rem;
+  height: 100vh;
+}
+
+.body__container__form__home {
+  display: grid;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
 }
 
