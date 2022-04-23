@@ -3,7 +3,7 @@
 /*Global colors*/
 
 body {
-  height: 100vh;
+  /* height: 100vh; */
   font-family: "Quicksand", sans-serif;
   background-color: var(--main-color);
   padding: 0;
@@ -54,15 +54,17 @@ header {
 }
 
 footer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
   background-color: var(--footer-color);
   color: var(--footer-text-color);
   text-align: center;
   font-size: 18px;
 }
+
+footer p {
+  margin: 0;
+  padding: 10px 1rem;
+}
+
 /* Elements ------------------------- */
 
 .resource_title {

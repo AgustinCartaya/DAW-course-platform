@@ -1,7 +1,4 @@
 /* container__form */
-body {
-  height: 100vh;
-}
 
 .body__container__form {
   display: grid;
@@ -9,7 +6,7 @@ body {
   align-items: center;
   height: 100%;
 }
-
+/* 
 .container__form {
   width: 350px;
-}
+} */
