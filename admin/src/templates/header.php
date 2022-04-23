@@ -29,8 +29,8 @@ session_start();
     <link rel="stylesheet" href="<?php echo W_STYLES;?>/form-styles.css" />
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/home-content.css">
-
-    <title>Web site admin</title>
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+    <title>Website Admin</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
@@ -47,8 +47,10 @@ session_start();
             <li class="nav__item"><a class="nav__link" href="<?php echo W_ADMIN;?>/src/controllers/signout.php">Sign
                     out</a></li>
             <form id="formColorMode" method="POST" action="">
-                <button type="submit" name="darck-mode" value="darck">Dark</button>
-                <button type="submit" name="light-mode" value="light">Light</button>
+                <button class="switch">
+                    <i class="bx bxs-sun" type="submit" name="darck-mode" value="darck"></i>
+                    <i class="bx bxs-moon" type="submit" name="light-mode" value="light"></i>
+                </button>
             </form>
         </nav>
     </header>
