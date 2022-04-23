@@ -23,6 +23,7 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<?php echo W_STYLES;?>/darck-mode.css">
     <link rel="stylesheet" href="<?php echo W_STYLES;?>/index-styles.css">
     <link rel="stylesheet" href="<?php echo W_STYLES;?>/global.css">
     <link rel="stylesheet" href="<?php echo W_STYLES;?>/form-styles.css" />
@@ -45,6 +46,10 @@ session_start();
                     href="<?php echo W_ADMIN;?>/src/controllers/students.php">Students</a></li>
             <li class="nav__item"><a class="nav__link" href="<?php echo W_ADMIN;?>/src/controllers/signout.php">Sign
                     out</a></li>
+            <form id="formColorMode" method="POST" action="">
+                <button type="submit" name="darck-mode" value="darck">Dark</button>
+                <button type="submit" name="light-mode" value="light">Light</button>
+            </form>
         </nav>
     </header>
 

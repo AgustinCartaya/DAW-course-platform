@@ -18,6 +18,7 @@ define( 'W_ADMIN', W_ROOT."/admin" );
 define( 'W_STUDENT', W_ROOT."/student" );
 define( 'W_FUNCTIONS', W_ROOT.'/src/functions' );
 define( 'W_STYLES', W_ROOT.'/src/styles' );
+define( 'W_SCRIPTS', W_ROOT.'/src/scripts' );
 
 define( 'W_IMAGES', W_ROOT.'/src/assets/img' );
 define( 'W_PDF', W_ROOT.'/src/assets/pdf' );

@@ -23,11 +23,11 @@
 }
 
 .app__btn.left {
-  background-color: black;
-  color: white;
+  background-color: var(--home-button-color1);
+  color: var(--home-button-text-color1);
 }
 
 .app__btn.right {
-  background-color: white;
-  color: black;
+  background-color: var(--home-button-color2);
+  color: var(--home-button-text-color2);
 }

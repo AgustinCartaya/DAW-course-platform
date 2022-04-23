@@ -1,27 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
 
 /*Global colors*/
-:root {
-  --main-color: #111; /**inputs background**/
-  --secondary-color: #fff;
-
-  --color1-1: #222; /**webpage background**/
-  --color1-2: #35858b;
-  --color1-3: #333;
-  --color1-4: #aaa;
-  --color1-5: #4fbdba;
-
-  --color2-1: #aaa; /**webpage background**/
-  --color2-2: #54bab9;
-  --color2-3: #f7ecde;
-  --color2-4: #fbf8f1;
-  --color2-5: #e9dac1;
-}
 
 body {
-  position: relative;
+  height: 100vh;
   font-family: "Quicksand", sans-serif;
-  background-color: var(--color1-3);
+  background-color: var(--main-color);
   padding: 0;
   margin: 0;
   font-size: 12px;
@@ -34,12 +18,12 @@ a {
 h3 {
   font-size: 20px;
   text-align: center;
-  color: white;
+  color: var(--text-color);
 }
 
 /*Navigation bar*/
 header {
-  background-color: var(--secondary-color);
+  background-color: var(--header-color);
 }
 
 .nav__list {
@@ -51,13 +35,13 @@ header {
 
 .nav__link {
   font-size: 1rem;
-  color: var(--color1-1);
+  color: var(--header-text-color);
   text-decoration: none;
   transition: all 0.5s ease;
 }
 
 .nav__link:hover {
-  color: var(--color2-2);
+  color: var(--header-text-hover-color);
 }
 
 .nav__link:hover {
@@ -69,13 +53,16 @@ header {
   padding: 2em;
 }
 
-footer h3 {
-  font-size: 2.1rem;
-  font-weight: 500;
-  text-transform: capitalize;
-  line-height: 3rem;
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--footer-color);
+  color: var(--footer-text-color);
+  text-align: center;
+  font-size: 18px;
 }
-
 /* Elements ------------------------- */
 
 .resource_title {
@@ -104,7 +91,7 @@ textarea {
   grid-template-rows: 0.5fr 0.3fr;
   text-align: center;
   font-size: 1rem;
-  background-color: black;
+  background-color: var(--cards-color);
   border: none;
   cursor: pointer;
   margin: 0;
@@ -119,7 +106,7 @@ textarea {
 }
 
 .card__item button span {
-  background-color: white;
+  background-color: var(--cards-type-color);
   padding: 5px;
   position: absolute;
   top: 0;
@@ -128,7 +115,7 @@ textarea {
 .card__item button p {
   padding: 0 10px;
   font-size: 0.8rem;
-  color: var(--secondary-color);
+  color: var(--cards-title-text-color);
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -147,4 +134,33 @@ textarea {
   width: 0;
   height: 100%;
   background-color: blue;
+}
+
+/*Home content*/
+
+.container__home {
+  display: grid;
+  row-gap: 1.5rem;
+  color: var(--text-color);
+  padding: 0 0.5rem;
+}
+
+.home_title {
+  color: var(--text-color);
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 2.5rem;
+  border-bottom: 1px solid rgba(170, 170, 170, 0.781);
+}
+
+.home_container_btn {
+  display: flex;
+  justify-content: center;
+  column-gap: 3rem;
+}
+
+.statistics__title {
+  text-align: start;
+  text-transform: uppercase;
 }
