@@ -292,6 +292,12 @@ select {
   justify-content: flex-end;
 }
 
+.fields__center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .data__left__side,
 .data__right__side {
   display: grid;
