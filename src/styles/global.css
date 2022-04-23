@@ -3,7 +3,7 @@
 /*Global colors*/
 
 body {
-  /* height: 100vh; */
+  height: 100%;
   font-family: "Quicksand", sans-serif;
   background-color: var(--main-color);
   padding: 0;
@@ -50,7 +50,8 @@ header {
 }
 
 .container {
-  padding: 2em;
+  padding: 2rem;
+  height: 100vh;
 }
 
 footer {
