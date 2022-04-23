@@ -67,6 +67,3 @@ session_start();
             </form>
         </nav>
     </header>
-
-    <div class="container">
-        <div class="row">

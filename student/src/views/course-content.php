@@ -1,3 +1,5 @@
+<div class="container">
+        <div class="row">
 <h1 class="home_title"><?php echo $course["title"]; ?></h1>
 <div class="body__container__course">
     <fieldset>

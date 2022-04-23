@@ -1,3 +1,5 @@
+<div class="container">
+        <div class="row">
 <div class="forum__container">
     <div id="messagesContainer" class="messages__container">
         <?php foreach($messages as $message){ ?>

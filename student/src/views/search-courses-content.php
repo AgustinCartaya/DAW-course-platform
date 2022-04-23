@@ -1,3 +1,5 @@
+<div class="container">
+        <div class="row">
 <div class="container__divided">
     <div class="container__left">
         <?php include("../forms/course-preview-form.php"); ?>
