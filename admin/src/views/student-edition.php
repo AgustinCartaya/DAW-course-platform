@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container__fluid">
     <div class="row">
         <div class="student__edit__container">
             <?php

@@ -13,9 +13,10 @@ import {
   fillThisInputError,
   desactiveInputError,
 } from "./functions/outlineErrors.js";
+console.log(fileInputTag);
 
-if (btn.value == "createCourse") {
-  fileInputTag.addEventListener("change", (e) => {
+fileInputTag.addEventListener("change", (e) => {
+  if (fileInputTag.classList.contains("createCourse")) {
     const file = e.target.files[0];
     if (file) {
       const fileReader = new FileReader();
@@ -29,8 +30,8 @@ if (btn.value == "createCourse") {
         "https://images.unsplash.com/profile-fb-1642446137-6bae7cc893b9.jpg?dpr=2&auto=format&fit=crop&w=60&h=60&q=60&crop=faces&bg=fff"
       );
     }
-  });
-}
+  }
+});
 
 if (btn.value == "createStudent") {
   fileInputTag.addEventListener("change", (e) => {
@@ -157,7 +158,11 @@ if (btn.value == "signup") {
   form.addEventListener("submit", (e) => {
     alert.classList.add("active");
     const values = new FormData(form);
-    if (values.get("user") == "" || values.get("password") == "" || values.get("repPassword") == "") {
+    if (
+      values.get("user") == "" ||
+      values.get("password") == "" ||
+      values.get("repPassword") == ""
+    ) {
       e.preventDefault();
       const { type, message, icon } = messages[1];
       fillThisInputError();
