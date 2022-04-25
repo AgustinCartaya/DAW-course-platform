@@ -1,12 +1,18 @@
 /* forum */
-.field-forum {
-  width: 100%;
-}
 
 .forum__container {
   max-width: 700px;
   margin: 0 auto;
-  color: white;
+  color: var(--text-color);
+}
+
+.field-forum {
+  width: 100%;
+}
+
+.field-forum > input {
+  background-color: var(--forum-input-color);
+  color: var(--forum-input-text-color);
 }
 
 .message-group-received {
