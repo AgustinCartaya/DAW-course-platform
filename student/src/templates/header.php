@@ -23,15 +23,23 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
+    <?php if(isset($_COOKIE["mode"])) {
+        if($_COOKIE["mode"]=="dark"){ ?>
+            <link rel="stylesheet" href="<?php echo W_STYLES;?>/dark-mode.css">
+        <?php } else { ?>
+            <link rel="stylesheet" href="<?php echo W_STYLES;?>/light-mode.css">
+    <?php } 
+    } else {
+        setcookie("mode", "dark", time() + 10000000);
+        }
+    ?>
     <link rel="stylesheet" href="<?php echo W_STYLES;?>/global.css">
     <link rel="stylesheet" href="<?php echo W_STYLES;?>/form-styles.css" />
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/forum-styles.css">
     <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
     <title>Website Student</title>
-    <script src="<?php echo W_SCRIPTS;?>/color-mode.js" type="module"></script>
-    <link rel="stylesheet" href="<?php echo W_STYLES;?>/darck-mode.css">
     <link rel="stylesheet" href="<?php echo W_STYLES;?>/index-styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
@@ -61,11 +69,11 @@ session_start();
                 <a class="nav__link" href="<?php echo W_STUDENT;?>/src/controllers/signout.php">Sign out</a>
             </li>
 
-            <form id="formColorMode" method="POST" action="">
+            <div>
                 <button class="switch">
-                    <i class="bx bxs-sun" type="submit" name="darck-mode" value="darck"></i>
-                    <i class="bx bxs-moon" type="submit" name="light-mode" value="light"></i>
+                    <i class="bx bxs-sun" value="dark"></i>
+                    <i class="bx bxs-moon" value="light"></i>
                 </button>
-            </form>
+            </div>
         </nav>
     </header>

@@ -6,5 +6,5 @@
         />
         <p><?php echo $student['user'];?></p>
     </button>
-    <input type="hidden" name="studentId" id="studentId" value="<?php echo $student['id'];?>"/>
+    <input type="hidden" name="studentId" value="<?php echo $student['id'];?>"/>
 </form>

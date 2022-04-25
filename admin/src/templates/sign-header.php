@@ -19,7 +19,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="<?php echo W_STYLES;?>/darck-mode.css">
+    <link rel="stylesheet" href="<?php echo W_STYLES;?>/dark-mode.css">
     <link rel="stylesheet" href="<?php echo W_STYLES;?>/global.css">
     <link rel="stylesheet" href="<?php echo W_STYLES;?>/form-styles.css" />
     <link rel="stylesheet" href="<?php echo W_STYLES;?>/sign-form.css" />

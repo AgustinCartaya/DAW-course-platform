@@ -41,6 +41,11 @@
   --home-button-text-color1: white;
   --home-button-text-color2: black;
 
+  --forum-container-color: #333;
   --forum-input-color: black;
   --forum-input-text-color: white;
+  --forum-message-sent-color: #0099ff;
+  --forum-message-sent-text-color: white;
+  --forum-message-receaved-color: #555;
+  --forum-message-receaved-text-color: white;
 }
