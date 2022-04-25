@@ -51,6 +51,11 @@ function getInscriptionDate($idStudent, $idCourse){
   return $query->fetch(PDO::FETCH_LAZY);
 }
 
-
-
-
+function getInscriptionFaitQCM($idStudent, $idCourse){
+  include("db-connection.php");
+  $query=$conection->prepare("SELECT faitQCM FROM INSCRIPTIONS WHERE idStudent=:idStudent AND idCourse=:idCourse");
+  $query->bindParam(':idStudent', $idStudent);
+  $query->bindParam(':idCourse', $idCourse);
+  $query->execute();
+  return $query->fetch(PDO::FETCH_LAZY);
+}
