@@ -1,5 +1,4 @@
-<div class="message__container <?php echo ($message['id']== $userId)? "message-sent":"message-received";?>">
-    <span><?php echo $message['id'];?></span>
+<div class="forum__container">
     <span><?php echo $message['user'];?></span>
     <div class="message-text">
         <?php echo $message['message'];?>

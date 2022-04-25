@@ -13,8 +13,8 @@
                         <div class="data__left__side">
                             <div class="container__form__image">
                                 <img src="<?php echo defaultImage('course');?>" class="image__avatar image__square" />
-                                <input type="file" class="image__input" id="image__input" name="courseThumbnail"
-                                    accept="image/*" />
+                                <input type="file" class="image__input createCourse" id="image__input"
+                                    name="courseThumbnail" accept="image/*" />
                                 <label for="image__input" class="image__label image__square">
                                     Choose Photo
                                 </label>

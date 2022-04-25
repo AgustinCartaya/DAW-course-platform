@@ -56,5 +56,7 @@ $(document).ready(function () {
   } else if (localStorage.getItem("mode") === "light") {
     light();
     btnSwitch.classList.add("active");
+  } else {
+    localStorage.setItem("mode", "dark");
   }
 });

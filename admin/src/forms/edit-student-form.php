@@ -1,10 +1,10 @@
 <div class="alert"></div>
 <div class="body__container__form">
     <div class="container__form">
-        <form method="POST" enctype="multipart/form-data" class="form__data">
+        <form method="POST" enctype="multipart/form-data" class="form__data" id="form">
             <fieldset>
                 <legend>Edit student #<?php echo $student['id']; ?></legend>
-                <div class="data__fields">
+                <div class=" data__fields">
                     <?php if(isset($messageError)){?>
                     <p class="php__form__error"> <?php echo $messageError; ?></p>
                     <?php } ?>
@@ -30,7 +30,8 @@
                                     <select id="studentLevel" name="studentLevel">
                                         <?php for ($i=1; $i<=10; $i++){ ?>
                                         <option <?php  echo ($student['level']==$i)?"selected ":""; ?>
-                                            value="<?php echo $i ?>">Level <?php echo $i ?></option>
+                                            value="<?php echo $i ?>">
+                                            Level <?php echo $i ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
@@ -38,7 +39,7 @@
                                     <label for="studentInterest">Interest</label>
                                     <select id="studentInterest" name="studentInterest">
                                         <?php foreach($disciplines as $discipline){ ?>
-                                        <option <?php  echo ($student['interest']==$discipline)?"selected ":""; ?> 
+                                        <option <?php  echo ($student['interest']==$discipline)?"selected ":""; ?>
                                             value="<?php echo $discipline ?>">
                                             <?php echo $discipline ?>
                                         </option>
@@ -70,11 +71,14 @@
                                     <label for="studentGender">Gender</label>
                                     <select name="studentGender" id="studentGender">
                                         <option <?php  echo ($student['gender']=="MALE")?"selected ":""; ?>
-                                            value="MALE">Male</option>
+                                            value="MALE">Male
+                                        </option>
                                         <option <?php  echo ($student['gender']=="FEMALE")?"selected ":""; ?>
-                                            value="FEMALE">Female</option>
+                                            value="FEMALE">
+                                            Female</option>
                                         <option <?php  echo ($student['gender']=="OTHER")?"selected ":""; ?>
-                                            value="OTHER">Other</option>
+                                            value="OTHER">Other
+                                        </option>
                                     </select>
                                 </div>
 
