@@ -27,7 +27,7 @@ session_start();
     <link rel="stylesheet" href="<?php echo W_STYLES;?>/global.css">
     <link rel="stylesheet" href="<?php echo W_STYLES;?>/form-styles.css" />
     <link rel="stylesheet" href="../styles/global.css">
-    <link rel="stylesheet" href="../styles/home-content.css">
+    <link rel="stylesheet" href="../styles/forum-styles.css">
     <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
     <title>Website Student</title>
     <script src="<?php echo W_SCRIPTS;?>/color-mode.js" type="module"></script>

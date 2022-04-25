@@ -1,5 +1,5 @@
 <form class="form__data" action="" method="POST" enctype="multipart/form-data" id="formSendMessage">
-    <div class="fields">
+    <div class="fields field-forum">
         <label for="textMessage">Type:</label>
         <input type="text" name="textMessage" id="textMessage" placeholder="Message"/>
     </div>
