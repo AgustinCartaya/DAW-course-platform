@@ -3,6 +3,11 @@
   width: 100%;
 }
 
+.messages__container {
+  height: 450px;
+  overflow-y: auto;
+}
+
 .forum__container {
   max-width: 700px;
   margin: 0 auto;
