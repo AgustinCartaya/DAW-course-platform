@@ -3,7 +3,7 @@ const form = document.querySelectorAll("FORM");
 const allInputTags = document.querySelectorAll("input");
 const fileInputTag = document.getElementById("image__input");
 const thumbnail = document.querySelector(".image__avatar");
-const btn = document.querySelectorAll("button");
+const btn = document.querySelector("button");
 const messages = [
   {
     type: "success",
