@@ -3,7 +3,6 @@
 if(isset($_GET['type'])) {
     // type index exists
 
-
 $t=$_GET['type'];
 //include(APP_QCM.'qcm_MATHEMATICS.php');
 include(APP_QCM.'qcm_'.$t.'.php');

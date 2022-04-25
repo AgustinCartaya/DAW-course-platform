@@ -37,12 +37,7 @@
                     <p>Description:<br /></p>
                     <span><?php echo $course["description"]; ?></span>
                 </div>
-                <div class="qcmbutton">
-                    <form method="GET" action="../controllers/qcm-page.php">
-                        <input type='hidden' name='type' value='<?php echo $course['type']; ?>'>
-                        <input type="submit" value="QCM" />
-                    </form>
-
+                
             </fieldset>
         </div>
 
