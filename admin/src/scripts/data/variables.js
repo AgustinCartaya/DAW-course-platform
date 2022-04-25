@@ -1,5 +1,5 @@
 const alert = document.querySelector(".alert");
-const form = document.querySelectorAll("FORM");
+const form = document.querySelector("FORM");
 const allInputTags = document.querySelectorAll("input");
 const fileInputTag = document.getElementById("image__input");
 const thumbnail = document.querySelector(".image__avatar");
