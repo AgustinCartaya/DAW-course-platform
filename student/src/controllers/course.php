@@ -20,9 +20,12 @@ if($_REQUEST){
     if(isset($course)){
         if(isset($faitqcm) && $faitqcm==0){
           ?>
+
           <div class="qcmbutton">
               <form method="GET" name="qcm" action="qcm-page.php">
                   <input type='hidden' name='type' value='<?php echo $course['type']; ?>'>
+                  <input type='hidden' name='cours' value='<?php echo $courseId ?>'>
+                  <input type='hidden' name='eleve' value='<?php echo $userId ?>'>
                   <input type="submit" name="qcmbutton" value="" />
 
                   <?php //Header("Location:qcm-page.php"); ?>
