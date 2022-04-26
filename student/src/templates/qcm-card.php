@@ -23,6 +23,7 @@ $j=0;
  <INPUT type="radio" name="<?php echo $i;?>" value=<?php $qcm->items->item[$i]->answer[$j]?>> <?php echo '<label style="background-color:white;color:black;font-weight:bold;">'.$qcm->items->item[0]->answer[0].'</label>'; $j++;?>
  <INPUT type="radio" name="<?php echo $i;?>" value=<?php $qcm->items->item[$i]->answer[$j]?>> <?php echo '<label style="background-color:white;color:black;font-weight:bold;">'.$qcm->items->item[0]->answer[1].'</label>'; $j++;?>
    <INPUT type="radio" name="<?php echo $i;?>" value=<?php $qcm->items->item[$i]->answer[$j]?>> <?php echo  '<label style="background-color:white;color:black;font-weight:bold;">'.$qcm->items->item[0]->answer[2].'</label>'; $j++;?>
+     <INPUT type="radio" name="<?php echo $i;?>" value=<?php $qcm->items->item[$i]->answer[$j]?>> <?php echo  '<label style="background-color:white;color:black;font-weight:bold;">'.$qcm->items->item[0]->answer[3].'</label>'; $j++;?>
    </span>
 
 <?php
@@ -31,11 +32,12 @@ $i++;
 }
 
 ?>
-<p><input type="submit" value="OK" onclick="ValidQcm()"></p>
+<p><input type="submit" name="submitbutton" value="OK" ></p>
 
 
 </form>
 <script>
+document.forms.submitbutton.onclick=function(){ValidQcm()};
 function ValidQcm(){
   <?php $qcm=UpdateFaitQCM($eleve,$cours); ?>
   return true;
