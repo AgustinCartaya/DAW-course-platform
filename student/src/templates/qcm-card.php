@@ -1,45 +1,41 @@
-<?php include_once(APP_FUNCTIONS."/db-student-course-CRUD.php"); ?>
 <?php
-if(isset($_GET['type'])) {
-    // type index exists
-
-$t=$_GET['type'];
-$eleve=$_GET['eleve'];
-$cours=$_GET['cours'];
-//include(APP_QCM.'qcm_MATHEMATICS.php');
-include(APP_QCM.'qcm_'.$t.'.php');
+include(APP_QCM.'qcm_'.$course['type'].'.php');
 $qcm = new SimpleXMLElement($xmlstr);
 ?>
 
- <?php
-$i=0;
-while($i<=1){
-$j=0;
-?>
-<form action="../controllers/my-courses.php" method="post">
-  <span>
-  <p> <?php echo '<label style="background-color:white;color:black;font-weight:bold;">'.$qcm->items->item[$i]->Question.'</label>';?> </p>
+<div class="alert"></div>
+<div class="body__container__form">
+  <div class="container__form">
+    <form class="form__data" id="formQCM" action="../controllers/course.php" method="post">
+      <fieldset>
+        <legend>QCM <?php echo $course['type']; ?></legend>
 
- <INPUT type="radio" name="<?php echo $i;?>" value=<?php $qcm->items->item[$i]->answer[$j]?>> <?php echo '<label style="background-color:white;color:black;font-weight:bold;">'.$qcm->items->item[0]->answer[0].'</label>'; $j++;?>
- <INPUT type="radio" name="<?php echo $i;?>" value=<?php $qcm->items->item[$i]->answer[$j]?>> <?php echo '<label style="background-color:white;color:black;font-weight:bold;">'.$qcm->items->item[0]->answer[1].'</label>'; $j++;?>
-   <INPUT type="radio" name="<?php echo $i;?>" value=<?php $qcm->items->item[$i]->answer[$j]?>> <?php echo  '<label style="background-color:white;color:black;font-weight:bold;">'.$qcm->items->item[0]->answer[2].'</label>'; $j++;?>
-     <INPUT type="radio" name="<?php echo $i;?>" value=<?php $qcm->items->item[$i]->answer[$j]?>> <?php echo  '<label style="background-color:white;color:black;font-weight:bold;">'.$qcm->items->item[0]->answer[3].'</label>'; $j++;?>
-   </span>
+        <div class="data__fields">
+          <?php
+          $i=0;
+          while($i<=1){
+          $j=0;
+          ?>
+            <div>
+              <p> <?php echo '<label class="qcm__question">'.$qcm->items->item[$i]->Question.'</label>';?> </p>
 
-<?php
-$i++;
-}
-}
+              <INPUT type="radio" name="<?php echo $i;?>" value=<?php $qcm->items->item[$i]->answer[$j]?>> <?php echo '<label>'.$qcm->items->item[0]->answer[0].'</label>'; $j++;?>
+              <INPUT type="radio" name="<?php echo $i;?>" value=<?php $qcm->items->item[$i]->answer[$j]?>> <?php echo '<label>'.$qcm->items->item[0]->answer[1].'</label>'; $j++;?>
+              <INPUT type="radio" name="<?php echo $i;?>" value=<?php $qcm->items->item[$i]->answer[$j]?>> <?php echo  '<label>'.$qcm->items->item[0]->answer[2].'</label>'; $j++;?>
+              <INPUT type="radio" name="<?php echo $i;?>" value=<?php $qcm->items->item[$i]->answer[$j]?>> <?php echo  '<label>'.$qcm->items->item[0]->answer[3].'</label>'; $j++;?>
+            
+            </div>
+          <?php
+          $i++;
+          }
+          ?>
+        </div>
+        <div class="btn__container"><input type="submit"  class="btn__submit btn__unique"  name="submitbutton" value="OK" ></div>
+      </fieldset>
 
-?>
-<p><input type="submit" name="submitbutton" value="OK" ></p>
+      <input type="hidden" name="courseId" value="<?php echo $courseId; ?>">
+      <input type="hidden" name="FFQCM">
+    </form>
+    </div>
+</div>
 
-
-</form>
-<script>
-document.forms.submitbutton.onclick=function(){ValidQcm()};
-function ValidQcm(){
-  <?php $qcm=UpdateFaitQCM($eleve,$cours); ?>
-  return true;
-}
- </script>

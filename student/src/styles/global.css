@@ -197,3 +197,10 @@
 .fields__divided {
   justify-items: center;
 }
+
+/** --- qcm -- **/
+
+.qcm__question {
+  font-size: 1rem;
+  font-weight: bold;
+}

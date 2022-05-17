@@ -5,7 +5,16 @@ include_once(APP_FUNCTIONS."/db-course-CRUD.php");
 include_once(APP_FUNCTIONS."/db-admin-CRUD.php");
 include_once(APP_FUNCTIONS."/db-student-course-CRUD.php");
 if($_REQUEST){
+
+
+    
+
+
     $courseId=$_REQUEST['courseId'];
+
+    if(isset($_REQUEST['FFQCM'])){
+      $qcm=UpdateFaitQCM($userId,$courseId);
+    }
 
     //cours information
     $course=getCourseById($courseId);
@@ -17,32 +26,12 @@ if($_REQUEST){
 
 
 
-    if(isset($course)){
-        if(isset($faitqcm) && $faitqcm==0){
-          ?>
-
-          <div class="qcmbutton">
-              <form method="GET" name="qcm" action="qcm-page.php">
-                  <input type='hidden' name='type' value='<?php echo $course['type']; ?>'>
-                  <input type='hidden' name='cours' value='<?php echo $courseId ?>'>
-                  <input type='hidden' name='eleve' value='<?php echo $userId ?>'>
-                  <input type="submit" name="qcmbutton" value="" />
-
-                  <?php //Header("Location:qcm-page.php"); ?>
-              </form>
-              <body type='hidden' onload="myFunction()" > </body>
-              <script> function myFunction() {
-    document.forms['qcm'].qcmbutton.click();
-  }  </script>
-            </div>
-
-            <?php
-        }
-        else{
+    if(isset($course))
+        if(isset($faitqcm) && $faitqcm==0)
+          include("../views/qcm-content.php"); 
+        else
           include("../views/course-content.php");
-        }
-
-    }
 }
+
 ?>
 <?php include("../templates/footer.php"); ?>
